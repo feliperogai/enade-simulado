@@ -46,9 +46,8 @@ def test_ordem_de_leitura(located, booklet_id):
     doc, loc = located(booklet_id)
 
     def pos(n):
-        # A coluna esquerda sempre começa em x=0; a divisória nem sempre é o meio da página.
         s = loc.segments[n][0]
-        return (s.page, 0 if s.x0 == 0 else 1, s.y0)
+        return (s.page, s.column, s.y0)
 
     positions = [pos(n) for n in wanted_numbers(BY_ID[booklet_id])]
     assert positions == sorted(positions)
@@ -101,3 +100,157 @@ def test_primeiro_segmento_comeca_no_titulo(located):
     s = loc.segments[9][0]
     text = doc[s.page].get_text("text", clip=(s.x0, s.y0, s.x1, s.y1))
     assert re.sub(r"\s+", " ", text).strip().upper().startswith("QUESTÃO 09")
+
+
+@pytest.mark.parametrize(
+    "booklet_id,n",
+    # alternativas repetidas ("I, apenas.") perto do rodapé já foram tomadas por mobília
+    [("2014-e", 7), ("2014-b", 2), ("2005-computacao", 72), ("2021-l", 7)],
+)
+def test_cinco_alternativas_visiveis(located, booklet_id, n):
+    doc, loc = located(booklet_id)
+    letters = set()
+    for s in loc.segments[n]:
+        for token in _visible_text(doc, loc, s).split():
+            m = re.fullmatch(r"\(?([A-E])[).]?", token)
+            if m:
+                letters.add(m.group(1))
+    assert letters == set("ABCDE")
+
+
+@pytest.mark.parametrize(
+    "booklet_id,header,objetivas,anterior",
+    [
+        ("2005-engenharia", (16, 17), (16, 17), 15),
+        ("2008-computacao", (78, 79), (78,), 77),  # a 79 é discursiva
+        ("2008-engenharia", (13, 14), (13, 14), 12),
+    ],
+)
+def test_texto_compartilhado(located, booklet_id, header, objetivas, anterior):
+    doc, loc = located(booklet_id)
+    header = f"TEXTO PARA AS QUESTÕES {header[0]} E {header[1]}"
+    for n in objetivas:
+        shared = " ".join(_visible_text(doc, loc, s) for s in loc.shared.get(n, [])).upper()
+        assert header in re.sub(r"\s+", " ", shared), f"questão {n} sem o texto compartilhado"
+    before = " ".join(_visible_text(doc, loc, s) for s in loc.segments[anterior]).upper()
+    assert "TEXTO PARA AS QUESTÕES" not in re.sub(r"\s+", " ", before)
+
+
+def test_continuacao_so_com_decoracao_e_descartada(located):
+    # A Q3 de 2005 termina na coluna direita da p1; a régua no topo da p2 não é conteúdo
+    # (deixava a imagem com a largura da página e o texto pela metade no celular).
+    _doc, loc = located("2005-computacao")
+    assert len(loc.segments[3]) == 1
+
+
+@pytest.mark.parametrize(
+    "booklet_id,n,trecho",
+    [("2005-computacao", 67, "PARA RESPONDER À QUESTÃO 67"), ("2008-computacao", 61, "FIGURA PARA A QUESTÃO 61")],
+)
+def test_texto_de_apoio_de_uma_questao(located, booklet_id, n, trecho):
+    doc, loc = located(booklet_id)
+    shared = " ".join(_visible_text(doc, loc, s) for s in loc.shared.get(n, [])).upper()
+    assert trecho in re.sub(r"\s+", " ", shared)
+    before = " ".join(_visible_text(doc, loc, s) for s in loc.segments.get(n - 1, [])).upper()
+    assert trecho not in re.sub(r"\s+", " ", before)
+
+
+def test_rascunho_com_letras_espacadas_corta_a_questao(located):
+    # Em 2005 o rótulo vem como "RASCUNH O"; a Q54 (p18, coluna direita) acaba nele.
+    _doc, loc = located("2005-computacao")
+    assert max(s.y1 for s in loc.segments[54]) < 260
+
+
+def test_caixa_de_rascunho_ao_lado_fica_fora(located):
+    # Na Q67 a metade direita da página (x > 320) é só a moldura do rascunho.
+    _doc, loc = located("2005-computacao")
+    assert max(s.x1 for s in loc.segments[67]) < 320
+
+
+def test_questao_de_largura_total_em_pagina_mista(located):
+    # 2008 p3: a Q6 ocupa a largura toda; abaixo dela a página tem duas colunas (Q7).
+    _doc, loc = located("2008-computacao")
+    assert max(s.x1 for s in loc.segments[6]) > 500
+    assert all(s.x1 <= 290 or s.x0 >= 260 for s in loc.segments[7])  # Q7 segue em colunas
+
+
+def test_texto_que_passa_da_divisoria_nao_e_cortado(located):
+    # 2008 p12: as linhas da coluna esquerda terminam em x≈306, além da divisória (305).
+    doc, loc = located("2008-computacao")
+    seg = loc.segments[27][0]
+    lines = [b for b in doc[seg.page].get_text("dict", clip=(seg.x0, seg.y0, seg.x1, seg.y1))["blocks"]]
+    right_edge = max(ln["bbox"][2] for b in lines for ln in b.get("lines", []))
+    assert seg.x1 >= right_edge
+
+
+@pytest.mark.parametrize("booklet_id", IDS)
+def test_segmentos_nao_se_sobrepoem(located, booklet_id):
+    # Sobreposição repete conteúdo na imagem (já aconteceu em 2008/e1 Q8).
+    _doc, loc = located(booklet_id)
+    for n, own in loc.segments.items():
+        segs = loc.shared.get(n, []) + own
+        for i, a in enumerate(segs):
+            for b in segs[i + 1:]:
+                if a.page != b.page:
+                    continue
+                overlap_w = min(a.x1, b.x1) - max(a.x0, b.x0)
+                overlap_h = min(a.y1, b.y1) - max(a.y0, b.y0)
+                # tolerância: as folgas de recorte (2–3 pt de cada lado) podem se tocar
+                assert overlap_w <= 6 or overlap_h <= 6, f"questão {n}: {a} × {b}"
+
+
+def test_titulo_da_proxima_enfase_fica_fora(located):
+    # 2008/e1: depois da Q40 (Computação) vem o bloco "CONTROLE E AUTOMAÇÃO".
+    doc, loc = located("2008-engenharia")
+    text = " ".join(_visible_text(doc, loc, s) for s in loc.segments[40]).upper()
+    assert "CONTROLE E AUTOMAÇÃO" not in re.sub(r"\s+", " ", text)
+
+
+def test_coluna_direita_nao_puxa_texto_da_esquerda(located):
+    # 2011 Q37 fica na coluna direita; o recorte não pode avançar sobre a Q36 (esquerda).
+    doc, loc = located("2011")
+    for s in loc.segments[37]:
+        assert s.x0 >= doc[s.page].rect.width / 2 - 12
+
+
+def test_rodape_de_enfase_e_mascarado(located):
+    # 2011: "SISTEMAS DE INFORMAÇÃO" no rodapé só das páginas de SI (poucas páginas).
+    doc, loc = located("2011")
+    text = " ".join(_visible_text(doc, loc, s) for s in loc.segments[49]).upper()
+    assert "SISTEMAS DE INFORMAÇÃO" not in re.sub(r"\s+", " ", text)
+
+
+@pytest.mark.parametrize("booklet_id,n", [("2014-e", 26), ("2014-e", 11), ("2014-e", 34)])
+def test_regua_fina_nao_estica_o_recorte_ate_o_rodape(located, booklet_id, n):
+    # Em 2014 o número da página é desenho vetorial no rodapé; uma régua vertical
+    # fina encostada no texto puxava o recorte até o fim da página e o incluía.
+    _doc, loc = located(booklet_id)
+    last = loc.segments[n][-1]
+    assert last.y1 < 730  # o número da página de 2014/e1 começa em y=730
+
+
+def test_area_livre_em_fonte_ilegivel_corta_a_questao(located):
+    # 2017-b p5: "Área livre" (só IDs de glifo) em y=458, abaixo da Q2.
+    _doc, loc = located("2017-b")
+    seg = [s for s in loc.segments[2] if s.page == 5][-1]
+    assert seg.y1 < 458
+
+
+def test_numero_da_pagina_na_margem_nao_e_titulo_fora_do_modo_number(located):
+    # Em 2017 o número da página fica na margem esquerda das páginas pares (y=778).
+    _doc, loc = located("2017-b")
+    for n, segs in loc.segments.items():
+        assert all(s.y1 < 770 for s in segs), f"questão {n}"
+
+
+def test_cabecalho_de_secao_ilegivel_encerra_a_questao(located):
+    # 2017-b: "COMPONENTE ESPECÍFICO" no topo da p12 (fonte sem ToUnicode) fecha a Q8.
+    _doc, loc = located("2017-b")
+    assert {s.page for s in loc.segments[8]} == {11}
+
+
+def test_codigo_de_barras_com_menos_digitos_e_mobilia(located):
+    # 2021: "*R0220216*" (páginas 1–9) e "*R02202113*" têm tamanhos diferentes;
+    # a Q1 termina na p4 e não pode levar o código do topo da p5.
+    _doc, loc = located("2021-b")
+    assert {s.page for s in loc.segments[1]} == {4}

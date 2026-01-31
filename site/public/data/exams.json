@@ -1,0 +1,6621 @@
+{
+  "generatedAt": "2026-10-13T21:16:04Z",
+  "versions": [
+    {
+      "id": "2005-computacao-si",
+      "year": 2005,
+      "course": "Sistemas de Informação",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2005-computacao/1.webp",
+          "width": 524,
+          "height": 656
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-computacao/2.webp",
+          "width": 524,
+          "height": 720
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-computacao/3.webp",
+          "width": 518,
+          "height": 1404
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2005-computacao/4.webp",
+          "width": 929,
+          "height": 843
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-computacao/5.webp",
+          "width": 1055,
+          "height": 598
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-computacao/6.webp",
+          "width": 509,
+          "height": 1429
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2005-computacao/7.webp",
+          "width": 534,
+          "height": 1420
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/11.webp",
+          "width": 533,
+          "height": 1036
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/12.webp",
+          "width": 509,
+          "height": 578
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/13.webp",
+          "width": 508,
+          "height": 445
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/14.webp",
+          "width": 533,
+          "height": 705
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/15.webp",
+          "width": 533,
+          "height": 354
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/16.webp",
+          "width": 533,
+          "height": 378
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/17.webp",
+          "width": 508,
+          "height": 650
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/18.webp",
+          "width": 508,
+          "height": 814
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/19.webp",
+          "width": 506,
+          "height": 536
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/20.webp",
+          "width": 506,
+          "height": 350
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/21.webp",
+          "width": 506,
+          "height": 554
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/22.webp",
+          "width": 535,
+          "height": 422
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/23.webp",
+          "width": 534,
+          "height": 532
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/24.webp",
+          "width": 507,
+          "height": 511
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/25.webp",
+          "width": 506,
+          "height": 433
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/26.webp",
+          "width": 505,
+          "height": 591
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/27.webp",
+          "width": 506,
+          "height": 384
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/28.webp",
+          "width": 534,
+          "height": 862
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/29.webp",
+          "width": 535,
+          "height": 577
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/30.webp",
+          "width": 533,
+          "height": 506
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/31.webp",
+          "width": 533,
+          "height": 506
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/32.webp",
+          "width": 533,
+          "height": 445
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/33.webp",
+          "width": 509,
+          "height": 861
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/34.webp",
+          "width": 509,
+          "height": 602
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/35.webp",
+          "width": 534,
+          "height": 1055
+        },
+        {
+          "n": 36,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/36.webp",
+          "width": 533,
+          "height": 418
+        },
+        {
+          "n": 37,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/37.webp",
+          "width": 509,
+          "height": 706
+        },
+        {
+          "n": 38,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/38.webp",
+          "width": 509,
+          "height": 741
+        }
+      ]
+    },
+    {
+      "id": "2005-computacao-cc",
+      "year": 2005,
+      "course": "Ciência da Computação (Bacharelado)",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2005-computacao/1.webp",
+          "width": 524,
+          "height": 656
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-computacao/2.webp",
+          "width": 524,
+          "height": 720
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-computacao/3.webp",
+          "width": 518,
+          "height": 1404
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2005-computacao/4.webp",
+          "width": 929,
+          "height": 843
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-computacao/5.webp",
+          "width": 1055,
+          "height": 598
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-computacao/6.webp",
+          "width": 509,
+          "height": 1429
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2005-computacao/7.webp",
+          "width": 534,
+          "height": 1420
+        },
+        {
+          "n": 41,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/41.webp",
+          "width": 497,
+          "height": 1019
+        },
+        {
+          "n": 42,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/42.webp",
+          "width": 545,
+          "height": 1024
+        },
+        {
+          "n": 43,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/43.webp",
+          "width": 497,
+          "height": 292
+        },
+        {
+          "n": 44,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/44.webp",
+          "width": 497,
+          "height": 1154
+        },
+        {
+          "n": 45,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/45.webp",
+          "width": 545,
+          "height": 442
+        },
+        {
+          "n": 46,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/46.webp",
+          "width": 545,
+          "height": 291
+        },
+        {
+          "n": 47,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/47.webp",
+          "width": 545,
+          "height": 694
+        },
+        {
+          "n": 48,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/48.webp",
+          "width": 497,
+          "height": 439
+        },
+        {
+          "n": 49,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/49.webp",
+          "width": 497,
+          "height": 559
+        },
+        {
+          "n": 50,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/50.webp",
+          "width": 497,
+          "height": 452
+        },
+        {
+          "n": 51,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/51.webp",
+          "width": 545,
+          "height": 893
+        },
+        {
+          "n": 52,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/52.webp",
+          "width": 545,
+          "height": 547
+        },
+        {
+          "n": 53,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/53.webp",
+          "width": 506,
+          "height": 1433
+        },
+        {
+          "n": 54,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/54.webp",
+          "width": 535,
+          "height": 389
+        },
+        {
+          "n": 56,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/56.webp",
+          "width": 516,
+          "height": 860
+        },
+        {
+          "n": 57,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/57.webp",
+          "width": 516,
+          "height": 520
+        },
+        {
+          "n": 58,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/58.webp",
+          "width": 527,
+          "height": 1384
+        },
+        {
+          "n": 59,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/59.webp",
+          "width": 1056,
+          "height": 1392
+        },
+        {
+          "n": 60,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/60.webp",
+          "width": 534,
+          "height": 471
+        },
+        {
+          "n": 61,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/61.webp",
+          "width": 534,
+          "height": 972
+        },
+        {
+          "n": 62,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/62.webp",
+          "width": 508,
+          "height": 1434
+        },
+        {
+          "n": 63,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/63.webp",
+          "width": 534,
+          "height": 859
+        },
+        {
+          "n": 64,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/64.webp",
+          "width": 534,
+          "height": 573
+        },
+        {
+          "n": 65,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/65.webp",
+          "width": 508,
+          "height": 604
+        },
+        {
+          "n": 66,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/66.webp",
+          "width": 508,
+          "height": 842
+        },
+        {
+          "n": 67,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/67.webp",
+          "width": 1106,
+          "height": 1458
+        },
+        {
+          "n": 68,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/68.webp",
+          "width": 525,
+          "height": 1439
+        },
+        {
+          "n": 69,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/69.webp",
+          "width": 518,
+          "height": 1450
+        }
+      ]
+    },
+    {
+      "id": "2005-computacao-ec",
+      "year": 2005,
+      "course": "Engenharia de Computação",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2005-computacao/1.webp",
+          "width": 524,
+          "height": 656
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-computacao/2.webp",
+          "width": 524,
+          "height": 720
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-computacao/3.webp",
+          "width": 518,
+          "height": 1404
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2005-computacao/4.webp",
+          "width": 929,
+          "height": 843
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-computacao/5.webp",
+          "width": 1055,
+          "height": 598
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-computacao/6.webp",
+          "width": 509,
+          "height": 1429
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2005-computacao/7.webp",
+          "width": 534,
+          "height": 1420
+        },
+        {
+          "n": 41,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/41.webp",
+          "width": 497,
+          "height": 1019
+        },
+        {
+          "n": 42,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/42.webp",
+          "width": 545,
+          "height": 1024
+        },
+        {
+          "n": 43,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/43.webp",
+          "width": 497,
+          "height": 292
+        },
+        {
+          "n": 44,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/44.webp",
+          "width": 497,
+          "height": 1154
+        },
+        {
+          "n": 45,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/45.webp",
+          "width": 545,
+          "height": 442
+        },
+        {
+          "n": 46,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/46.webp",
+          "width": 545,
+          "height": 291
+        },
+        {
+          "n": 47,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/47.webp",
+          "width": 545,
+          "height": 694
+        },
+        {
+          "n": 48,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/48.webp",
+          "width": 497,
+          "height": 439
+        },
+        {
+          "n": 49,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/49.webp",
+          "width": 497,
+          "height": 559
+        },
+        {
+          "n": 50,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/50.webp",
+          "width": 497,
+          "height": 452
+        },
+        {
+          "n": 51,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/51.webp",
+          "width": 545,
+          "height": 893
+        },
+        {
+          "n": 52,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/52.webp",
+          "width": 545,
+          "height": 547
+        },
+        {
+          "n": 53,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/53.webp",
+          "width": 506,
+          "height": 1433
+        },
+        {
+          "n": 54,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/54.webp",
+          "width": 535,
+          "height": 389
+        },
+        {
+          "n": 71,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/71.webp",
+          "width": 521,
+          "height": 524
+        },
+        {
+          "n": 72,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/72.webp",
+          "width": 521,
+          "height": 871
+        },
+        {
+          "n": 73,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/73.webp",
+          "width": 522,
+          "height": 1009
+        },
+        {
+          "n": 74,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-computacao/74.webp",
+          "width": 522,
+          "height": 392
+        },
+        {
+          "n": 75,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/75.webp",
+          "width": 489,
+          "height": 598
+        },
+        {
+          "n": 76,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-computacao/76.webp",
+          "width": 489,
+          "height": 822
+        },
+        {
+          "n": 77,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/77.webp",
+          "width": 552,
+          "height": 767
+        },
+        {
+          "n": 78,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/78.webp",
+          "width": 552,
+          "height": 694
+        },
+        {
+          "n": 79,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-computacao/79.webp",
+          "width": 543,
+          "height": 534
+        },
+        {
+          "n": 80,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/80.webp",
+          "width": 542,
+          "height": 259
+        },
+        {
+          "n": 81,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/81.webp",
+          "width": 543,
+          "height": 651
+        },
+        {
+          "n": 82,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/82.webp",
+          "width": 499,
+          "height": 1055
+        },
+        {
+          "n": 83,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-computacao/83.webp",
+          "width": 499,
+          "height": 384
+        },
+        {
+          "n": 84,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-computacao/84.webp",
+          "width": 1057,
+          "height": 457
+        }
+      ]
+    },
+    {
+      "id": "2005-engenharia-ec",
+      "year": 2005,
+      "course": "Engenharia de Computação (Engenharia Grupo II)",
+      "booklet": "Engenharia Grupo II",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2005-engenharia/1.webp",
+          "width": 1090,
+          "height": 301
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-engenharia/2.webp",
+          "width": 1033,
+          "height": 689
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-engenharia/3.webp",
+          "width": 1090,
+          "height": 542
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2005-engenharia/4.webp",
+          "width": 1090,
+          "height": 733
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2005-engenharia/5.webp",
+          "width": 1090,
+          "height": 560
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2005-engenharia/6.webp",
+          "width": 1090,
+          "height": 671
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2005-engenharia/7.webp",
+          "width": 911,
+          "height": 1283
+        },
+        {
+          "n": 8,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-engenharia/8.webp",
+          "width": 1090,
+          "height": 379
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-engenharia/9.webp",
+          "width": 1086,
+          "height": 379
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/10.webp",
+          "width": 1090,
+          "height": 437
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-engenharia/11.webp",
+          "width": 1090,
+          "height": 998
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/12.webp",
+          "width": 1090,
+          "height": 806
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-engenharia/13.webp",
+          "width": 1090,
+          "height": 890
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-engenharia/14.webp",
+          "width": 1090,
+          "height": 946
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/15.webp",
+          "width": 1090,
+          "height": 599
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-engenharia/16.webp",
+          "width": 1090,
+          "height": 646
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-engenharia/17.webp",
+          "width": 1090,
+          "height": 1457
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-engenharia/18.webp",
+          "width": 1007,
+          "height": 389
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/19.webp",
+          "width": 1090,
+          "height": 785
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-engenharia/20.webp",
+          "width": 1090,
+          "height": 512
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-engenharia/21.webp",
+          "width": 1090,
+          "height": 774
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-engenharia/22.webp",
+          "width": 1090,
+          "height": 543
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/23.webp",
+          "width": 967,
+          "height": 722
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-engenharia/24.webp",
+          "width": 1090,
+          "height": 1173
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-engenharia/25.webp",
+          "width": 1090,
+          "height": 526
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2005-engenharia/26.webp",
+          "width": 1090,
+          "height": 253
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/27.webp",
+          "width": 1090,
+          "height": 350
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-engenharia/28.webp",
+          "width": 1090,
+          "height": 291
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-engenharia/29.webp",
+          "width": 775,
+          "height": 390
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-engenharia/30.webp",
+          "width": 1090,
+          "height": 1046
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2005-engenharia/31.webp",
+          "width": 1090,
+          "height": 493
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2005-engenharia/32.webp",
+          "width": 1090,
+          "height": 709
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2005-engenharia/33.webp",
+          "width": 985,
+          "height": 354
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2005-engenharia/34.webp",
+          "width": 1090,
+          "height": 277
+        }
+      ]
+    },
+    {
+      "id": "2008-computacao-cc",
+      "year": 2008,
+      "course": "Ciência da Computação (Bacharelado)",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-computacao/1.webp",
+          "width": 1056,
+          "height": 1361
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2008-computacao/2.webp",
+          "width": 524,
+          "height": 966
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/3.webp",
+          "width": 524,
+          "height": 386
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2008-computacao/4.webp",
+          "width": 519,
+          "height": 566
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/5.webp",
+          "width": 519,
+          "height": 786
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2008-computacao/6.webp",
+          "width": 1057,
+          "height": 888
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/7.webp",
+          "width": 587,
+          "height": 933
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-computacao/8.webp",
+          "width": 1058,
+          "height": 1362
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/11.webp",
+          "width": 522,
+          "height": 496
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/12.webp",
+          "width": 522,
+          "height": 473
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/13.webp",
+          "width": 522,
+          "height": 266
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/14.webp",
+          "width": 522,
+          "height": 1265
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/15.webp",
+          "width": 522,
+          "height": 390
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/16.webp",
+          "width": 522,
+          "height": 948
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/17.webp",
+          "width": 522,
+          "height": 610
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/18.webp",
+          "width": 522,
+          "height": 744
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/19.webp",
+          "width": 1058,
+          "height": 510
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/21.webp",
+          "width": 533,
+          "height": 731
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/22.webp",
+          "width": 533,
+          "height": 260
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/23.webp",
+          "width": 511,
+          "height": 988
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/24.webp",
+          "width": 533,
+          "height": 1114
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/25.webp",
+          "width": 511,
+          "height": 1112
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/26.webp",
+          "width": 553,
+          "height": 1056
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/27.webp",
+          "width": 553,
+          "height": 313
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/28.webp",
+          "width": 493,
+          "height": 676
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/29.webp",
+          "width": 493,
+          "height": 320
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/30.webp",
+          "width": 493,
+          "height": 360
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/31.webp",
+          "width": 517,
+          "height": 573
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/32.webp",
+          "width": 517,
+          "height": 787
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/33.webp",
+          "width": 529,
+          "height": 715
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/34.webp",
+          "width": 529,
+          "height": 650
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/35.webp",
+          "width": 587,
+          "height": 761
+        },
+        {
+          "n": 36,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/36.webp",
+          "width": 587,
+          "height": 591
+        },
+        {
+          "n": 37,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/37.webp",
+          "width": 459,
+          "height": 427
+        },
+        {
+          "n": 38,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/38.webp",
+          "width": 459,
+          "height": 481
+        }
+      ]
+    },
+    {
+      "id": "2008-computacao-ec",
+      "year": 2008,
+      "course": "Engenharia de Computação",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-computacao/1.webp",
+          "width": 1056,
+          "height": 1361
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2008-computacao/2.webp",
+          "width": 524,
+          "height": 966
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/3.webp",
+          "width": 524,
+          "height": 386
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2008-computacao/4.webp",
+          "width": 519,
+          "height": 566
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/5.webp",
+          "width": 519,
+          "height": 786
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2008-computacao/6.webp",
+          "width": 1057,
+          "height": 888
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/7.webp",
+          "width": 587,
+          "height": 933
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-computacao/8.webp",
+          "width": 1058,
+          "height": 1362
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/11.webp",
+          "width": 522,
+          "height": 496
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/12.webp",
+          "width": 522,
+          "height": 473
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/13.webp",
+          "width": 522,
+          "height": 266
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/14.webp",
+          "width": 522,
+          "height": 1265
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/15.webp",
+          "width": 522,
+          "height": 390
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/16.webp",
+          "width": 522,
+          "height": 948
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/17.webp",
+          "width": 522,
+          "height": 610
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/18.webp",
+          "width": 522,
+          "height": 744
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/19.webp",
+          "width": 1058,
+          "height": 510
+        },
+        {
+          "n": 41,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/41.webp",
+          "width": 436,
+          "height": 1194
+        },
+        {
+          "n": 42,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/42.webp",
+          "width": 610,
+          "height": 338
+        },
+        {
+          "n": 43,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/43.webp",
+          "width": 610,
+          "height": 841
+        },
+        {
+          "n": 44,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2008-computacao/44.webp",
+          "width": 523,
+          "height": 1366
+        },
+        {
+          "n": 45,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/45.webp",
+          "width": 523,
+          "height": 1044
+        },
+        {
+          "n": 46,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/46.webp",
+          "width": 523,
+          "height": 744
+        },
+        {
+          "n": 47,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/47.webp",
+          "width": 523,
+          "height": 603
+        },
+        {
+          "n": 48,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/48.webp",
+          "width": 523,
+          "height": 638
+        },
+        {
+          "n": 49,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/49.webp",
+          "width": 523,
+          "height": 708
+        },
+        {
+          "n": 50,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/50.webp",
+          "width": 523,
+          "height": 2022
+        },
+        {
+          "n": 51,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/51.webp",
+          "width": 523,
+          "height": 1372
+        },
+        {
+          "n": 52,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/52.webp",
+          "width": 523,
+          "height": 967
+        },
+        {
+          "n": 53,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/53.webp",
+          "width": 579,
+          "height": 693
+        },
+        {
+          "n": 54,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/54.webp",
+          "width": 579,
+          "height": 665
+        },
+        {
+          "n": 55,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/55.webp",
+          "width": 465,
+          "height": 464
+        },
+        {
+          "n": 56,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/56.webp",
+          "width": 579,
+          "height": 707
+        },
+        {
+          "n": 57,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/57.webp",
+          "width": 579,
+          "height": 646
+        },
+        {
+          "n": 58,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/58.webp",
+          "width": 465,
+          "height": 856
+        }
+      ]
+    },
+    {
+      "id": "2008-computacao-si",
+      "year": 2008,
+      "course": "Sistemas de Informação",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-computacao/1.webp",
+          "width": 1056,
+          "height": 1361
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2008-computacao/2.webp",
+          "width": 524,
+          "height": 966
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/3.webp",
+          "width": 524,
+          "height": 386
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2008-computacao/4.webp",
+          "width": 519,
+          "height": 566
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/5.webp",
+          "width": 519,
+          "height": 786
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2008-computacao/6.webp",
+          "width": 1057,
+          "height": 888
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-computacao/7.webp",
+          "width": 587,
+          "height": 933
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-computacao/8.webp",
+          "width": 1058,
+          "height": 1362
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/11.webp",
+          "width": 522,
+          "height": 496
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/12.webp",
+          "width": 522,
+          "height": 473
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/13.webp",
+          "width": 522,
+          "height": 266
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/14.webp",
+          "width": 522,
+          "height": 1265
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/15.webp",
+          "width": 522,
+          "height": 390
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/16.webp",
+          "width": 522,
+          "height": 948
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/17.webp",
+          "width": 522,
+          "height": 610
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/18.webp",
+          "width": 522,
+          "height": 744
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/19.webp",
+          "width": 1058,
+          "height": 510
+        },
+        {
+          "n": 61,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/61.webp",
+          "width": 890,
+          "height": 867
+        },
+        {
+          "n": 62,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/62.webp",
+          "width": 615,
+          "height": 352
+        },
+        {
+          "n": 63,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/63.webp",
+          "width": 429,
+          "height": 709
+        },
+        {
+          "n": 64,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/64.webp",
+          "width": 523,
+          "height": 942
+        },
+        {
+          "n": 65,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/65.webp",
+          "width": 523,
+          "height": 400
+        },
+        {
+          "n": 66,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-computacao/66.webp",
+          "width": 523,
+          "height": 995
+        },
+        {
+          "n": 67,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/67.webp",
+          "width": 523,
+          "height": 342
+        },
+        {
+          "n": 68,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/68.webp",
+          "width": 1060,
+          "height": 1370
+        },
+        {
+          "n": 69,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/69.webp",
+          "width": 552,
+          "height": 707
+        },
+        {
+          "n": 70,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/70.webp",
+          "width": 552,
+          "height": 637
+        },
+        {
+          "n": 71,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/71.webp",
+          "width": 482,
+          "height": 964
+        },
+        {
+          "n": 72,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/72.webp",
+          "width": 482,
+          "height": 384
+        },
+        {
+          "n": 73,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/73.webp",
+          "width": 552,
+          "height": 1064
+        },
+        {
+          "n": 74,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-computacao/74.webp",
+          "width": 482,
+          "height": 1059
+        },
+        {
+          "n": 75,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-computacao/75.webp",
+          "width": 1044,
+          "height": 338
+        },
+        {
+          "n": 76,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-computacao/76.webp",
+          "width": 606,
+          "height": 546
+        },
+        {
+          "n": 77,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/77.webp",
+          "width": 606,
+          "height": 438
+        },
+        {
+          "n": 78,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-computacao/78.webp",
+          "width": 579,
+          "height": 1352
+        }
+      ]
+    },
+    {
+      "id": "2008-engenharia-ec",
+      "year": 2008,
+      "course": "Engenharia de Computação (Engenharia Grupo II)",
+      "booklet": "Engenharia Grupo II",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-engenharia/1.webp",
+          "width": 1090,
+          "height": 1375
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2008-engenharia/2.webp",
+          "width": 534,
+          "height": 1008
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-engenharia/3.webp",
+          "width": 535,
+          "height": 393
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2008-engenharia/4.webp",
+          "width": 534,
+          "height": 539
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-engenharia/5.webp",
+          "width": 534,
+          "height": 851
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2008-engenharia/6.webp",
+          "width": 1090,
+          "height": 862
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2008-engenharia/7.webp",
+          "width": 537,
+          "height": 1273
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2008-engenharia/8.webp",
+          "width": 1092,
+          "height": 2112
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-engenharia/11.webp",
+          "width": 534,
+          "height": 1333
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-engenharia/12.webp",
+          "width": 535,
+          "height": 1422
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-engenharia/13.webp",
+          "width": 535,
+          "height": 1385
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-engenharia/14.webp",
+          "width": 535,
+          "height": 1780
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-engenharia/15.webp",
+          "width": 536,
+          "height": 722
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-engenharia/16.webp",
+          "width": 534,
+          "height": 588
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-engenharia/17.webp",
+          "width": 535,
+          "height": 1138
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-engenharia/18.webp",
+          "width": 535,
+          "height": 1436
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-engenharia/19.webp",
+          "width": 535,
+          "height": 1379
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-engenharia/20.webp",
+          "width": 1090,
+          "height": 1426
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-engenharia/21.webp",
+          "width": 536,
+          "height": 716
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-engenharia/22.webp",
+          "width": 534,
+          "height": 552
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-engenharia/23.webp",
+          "width": 535,
+          "height": 727
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-engenharia/24.webp",
+          "width": 535,
+          "height": 660
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-engenharia/25.webp",
+          "width": 535,
+          "height": 1422
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-engenharia/26.webp",
+          "width": 536,
+          "height": 763
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-engenharia/27.webp",
+          "width": 534,
+          "height": 646
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-engenharia/28.webp",
+          "width": 536,
+          "height": 1226
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-engenharia/29.webp",
+          "width": 535,
+          "height": 1418
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-engenharia/30.webp",
+          "width": 535,
+          "height": 921
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-engenharia/31.webp",
+          "width": 534,
+          "height": 1007
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2008-engenharia/32.webp",
+          "width": 534,
+          "height": 1168
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-engenharia/33.webp",
+          "width": 535,
+          "height": 853
+        },
+        {
+          "n": 37,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2008-engenharia/37.webp",
+          "width": 534,
+          "height": 520
+        },
+        {
+          "n": 38,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2008-engenharia/38.webp",
+          "width": 534,
+          "height": 278
+        },
+        {
+          "n": 39,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2008-engenharia/39.webp",
+          "width": 534,
+          "height": 517
+        },
+        {
+          "n": 40,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2008-engenharia/40.webp",
+          "width": 536,
+          "height": 930
+        }
+      ]
+    },
+    {
+      "id": "2011-lic",
+      "year": 2011,
+      "course": "Computação (Licenciatura)",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2011/1.webp",
+          "width": 829,
+          "height": 634
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/2.webp",
+          "width": 1064,
+          "height": 684
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/3.webp",
+          "width": 528,
+          "height": 1325
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/4.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2011/5.webp",
+          "width": 1066,
+          "height": 1325
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/6.webp",
+          "width": 528,
+          "height": 1018
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/7.webp",
+          "width": 527,
+          "height": 1329
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/8.webp",
+          "width": 1064,
+          "height": 923
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/9.webp",
+          "width": 528,
+          "height": 1320
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/10.webp",
+          "width": 529,
+          "height": 808
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/11.webp",
+          "width": 529,
+          "height": 615
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/12.webp",
+          "width": 528,
+          "height": 700
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2011/13.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/14.webp",
+          "width": 528,
+          "height": 952
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/15.webp",
+          "width": 528,
+          "height": 567
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/16.webp",
+          "width": 527,
+          "height": 734
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/17.webp",
+          "width": 938,
+          "height": 1309
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/18.webp",
+          "width": 528,
+          "height": 871
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/19.webp",
+          "width": 528,
+          "height": 431
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/20.webp",
+          "width": 527,
+          "height": 665
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/21.webp",
+          "width": 527,
+          "height": 648
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/22.webp",
+          "width": 532,
+          "height": 927
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/23.webp",
+          "width": 527,
+          "height": 941
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/24.webp",
+          "width": 528,
+          "height": 1324
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/25.webp",
+          "width": 527,
+          "height": 701
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/26.webp",
+          "width": 527,
+          "height": 610
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/27.webp",
+          "width": 528,
+          "height": 1314
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/28.webp",
+          "width": 527,
+          "height": 1061
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/29.webp",
+          "width": 528,
+          "height": 803
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/30.webp",
+          "width": 527,
+          "height": 508
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/31.webp",
+          "width": 528,
+          "height": 763
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/32.webp",
+          "width": 527,
+          "height": 757
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/33.webp",
+          "width": 1064,
+          "height": 1319
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/34.webp",
+          "width": 1064,
+          "height": 416
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/35.webp",
+          "width": 1066,
+          "height": 892
+        }
+      ]
+    },
+    {
+      "id": "2011-cc",
+      "year": 2011,
+      "course": "Ciência da Computação (Bacharelado)",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2011/1.webp",
+          "width": 829,
+          "height": 634
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/2.webp",
+          "width": 1064,
+          "height": 684
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/3.webp",
+          "width": 528,
+          "height": 1325
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/4.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2011/5.webp",
+          "width": 1066,
+          "height": 1325
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/6.webp",
+          "width": 528,
+          "height": 1018
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/7.webp",
+          "width": 527,
+          "height": 1329
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/8.webp",
+          "width": 1064,
+          "height": 923
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/9.webp",
+          "width": 528,
+          "height": 1320
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/10.webp",
+          "width": 529,
+          "height": 808
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/11.webp",
+          "width": 529,
+          "height": 615
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/12.webp",
+          "width": 528,
+          "height": 700
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2011/13.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/14.webp",
+          "width": 528,
+          "height": 952
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/15.webp",
+          "width": 528,
+          "height": 567
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/16.webp",
+          "width": 527,
+          "height": 734
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/17.webp",
+          "width": 938,
+          "height": 1309
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/18.webp",
+          "width": 528,
+          "height": 871
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/19.webp",
+          "width": 528,
+          "height": 431
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/20.webp",
+          "width": 527,
+          "height": 665
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/21.webp",
+          "width": 527,
+          "height": 648
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/22.webp",
+          "width": 532,
+          "height": 927
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/23.webp",
+          "width": 527,
+          "height": 941
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/24.webp",
+          "width": 528,
+          "height": 1324
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/25.webp",
+          "width": 527,
+          "height": 701
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/26.webp",
+          "width": 527,
+          "height": 610
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/27.webp",
+          "width": 528,
+          "height": 1314
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/28.webp",
+          "width": 527,
+          "height": 1061
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/29.webp",
+          "width": 528,
+          "height": 803
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/30.webp",
+          "width": 527,
+          "height": 508
+        },
+        {
+          "n": 36,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/36.webp",
+          "width": 528,
+          "height": 1324
+        },
+        {
+          "n": 37,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/37.webp",
+          "width": 527,
+          "height": 1321
+        },
+        {
+          "n": 38,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/38.webp",
+          "width": 528,
+          "height": 1324
+        },
+        {
+          "n": 39,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/39.webp",
+          "width": 527,
+          "height": 534
+        },
+        {
+          "n": 40,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/40.webp",
+          "width": 527,
+          "height": 767
+        }
+      ]
+    },
+    {
+      "id": "2011-ec",
+      "year": 2011,
+      "course": "Engenharia de Computação",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2011/1.webp",
+          "width": 829,
+          "height": 634
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/2.webp",
+          "width": 1064,
+          "height": 684
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/3.webp",
+          "width": 528,
+          "height": 1325
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/4.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2011/5.webp",
+          "width": 1066,
+          "height": 1325
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/6.webp",
+          "width": 528,
+          "height": 1018
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/7.webp",
+          "width": 527,
+          "height": 1329
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/8.webp",
+          "width": 1064,
+          "height": 923
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/9.webp",
+          "width": 528,
+          "height": 1320
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/10.webp",
+          "width": 529,
+          "height": 808
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/11.webp",
+          "width": 529,
+          "height": 615
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/12.webp",
+          "width": 528,
+          "height": 700
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2011/13.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/14.webp",
+          "width": 528,
+          "height": 952
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/15.webp",
+          "width": 528,
+          "height": 567
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/16.webp",
+          "width": 527,
+          "height": 734
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/17.webp",
+          "width": 938,
+          "height": 1309
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/18.webp",
+          "width": 528,
+          "height": 871
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/19.webp",
+          "width": 528,
+          "height": 431
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/20.webp",
+          "width": 527,
+          "height": 665
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/21.webp",
+          "width": 527,
+          "height": 648
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/22.webp",
+          "width": 532,
+          "height": 927
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/23.webp",
+          "width": 527,
+          "height": 941
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/24.webp",
+          "width": 528,
+          "height": 1324
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/25.webp",
+          "width": 527,
+          "height": 701
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/26.webp",
+          "width": 527,
+          "height": 610
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/27.webp",
+          "width": 528,
+          "height": 1314
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/28.webp",
+          "width": 527,
+          "height": 1061
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/29.webp",
+          "width": 528,
+          "height": 803
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/30.webp",
+          "width": 527,
+          "height": 508
+        },
+        {
+          "n": 41,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/41.webp",
+          "width": 528,
+          "height": 1326
+        },
+        {
+          "n": 42,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/42.webp",
+          "width": 527,
+          "height": 620
+        },
+        {
+          "n": 43,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/43.webp",
+          "width": 1064,
+          "height": 1322
+        },
+        {
+          "n": 44,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2011/44.webp",
+          "width": 1064,
+          "height": 1329
+        },
+        {
+          "n": 45,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/45.webp",
+          "width": 1001,
+          "height": 827
+        }
+      ]
+    },
+    {
+      "id": "2011-si",
+      "year": 2011,
+      "course": "Sistemas de Informação",
+      "booklet": "Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2011/1.webp",
+          "width": 829,
+          "height": 634
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/2.webp",
+          "width": 1064,
+          "height": 684
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/3.webp",
+          "width": 528,
+          "height": 1325
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2011/4.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2011/5.webp",
+          "width": 1066,
+          "height": 1325
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/6.webp",
+          "width": 528,
+          "height": 1018
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2011/7.webp",
+          "width": 527,
+          "height": 1329
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2011/8.webp",
+          "width": 1064,
+          "height": 923
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/9.webp",
+          "width": 528,
+          "height": 1320
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/10.webp",
+          "width": 529,
+          "height": 808
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/11.webp",
+          "width": 529,
+          "height": 615
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/12.webp",
+          "width": 528,
+          "height": 700
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2011/13.webp",
+          "width": 527,
+          "height": 1323
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/14.webp",
+          "width": 528,
+          "height": 952
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/15.webp",
+          "width": 528,
+          "height": 567
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/16.webp",
+          "width": 527,
+          "height": 734
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/17.webp",
+          "width": 938,
+          "height": 1309
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/18.webp",
+          "width": 528,
+          "height": 871
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/19.webp",
+          "width": 528,
+          "height": 431
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/20.webp",
+          "width": 527,
+          "height": 665
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/21.webp",
+          "width": 527,
+          "height": 648
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/22.webp",
+          "width": 532,
+          "height": 927
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/23.webp",
+          "width": 527,
+          "height": 941
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/24.webp",
+          "width": 528,
+          "height": 1324
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/25.webp",
+          "width": 527,
+          "height": 701
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/26.webp",
+          "width": 527,
+          "height": 610
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2011/27.webp",
+          "width": 528,
+          "height": 1314
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/28.webp",
+          "width": 527,
+          "height": 1061
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/29.webp",
+          "width": 528,
+          "height": 803
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/30.webp",
+          "width": 527,
+          "height": 508
+        },
+        {
+          "n": 46,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/46.webp",
+          "width": 528,
+          "height": 997
+        },
+        {
+          "n": 47,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2011/47.webp",
+          "width": 528,
+          "height": 1029
+        },
+        {
+          "n": 48,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2011/48.webp",
+          "width": 530,
+          "height": 914
+        },
+        {
+          "n": 49,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2011/49.webp",
+          "width": 528,
+          "height": 399
+        },
+        {
+          "n": 50,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2011/50.webp",
+          "width": 527,
+          "height": 737
+        }
+      ]
+    },
+    {
+      "id": "2014-b",
+      "year": 2014,
+      "course": "Ciência da Computação (Bacharelado)",
+      "booklet": "Ciência da Computação (Bacharelado)",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2014-b/1.webp",
+          "width": 1064,
+          "height": 724
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2014-b/2.webp",
+          "width": 1064,
+          "height": 551
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2014-b/3.webp",
+          "width": 1064,
+          "height": 1281
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2014-b/4.webp",
+          "width": 525,
+          "height": 1283
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2014-b/5.webp",
+          "width": 526,
+          "height": 1284
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2014-b/6.webp",
+          "width": 1064,
+          "height": 1292
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2014-b/7.webp",
+          "width": 528,
+          "height": 1287
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2014-b/8.webp",
+          "width": 526,
+          "height": 1273
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/9.webp",
+          "width": 1064,
+          "height": 1280
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-b/10.webp",
+          "width": 525,
+          "height": 834
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/11.webp",
+          "width": 526,
+          "height": 963
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-b/12.webp",
+          "width": 1064,
+          "height": 1285
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/13.webp",
+          "width": 528,
+          "height": 1291
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/14.webp",
+          "width": 526,
+          "height": 521
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-b/15.webp",
+          "width": 526,
+          "height": 572
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-b/16.webp",
+          "width": 525,
+          "height": 2516
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-b/17.webp",
+          "width": 1064,
+          "height": 546
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-b/18.webp",
+          "width": 1064,
+          "height": 456
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-b/19.webp",
+          "width": 527,
+          "height": 1288
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-b/20.webp",
+          "width": 526,
+          "height": 1128
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/21.webp",
+          "width": 1064,
+          "height": 1289
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-b/22.webp",
+          "width": 525,
+          "height": 903
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-b/23.webp",
+          "width": 512,
+          "height": 388
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-b/24.webp",
+          "width": 526,
+          "height": 1249
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-b/25.webp",
+          "width": 1064,
+          "height": 1063
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-b/26.webp",
+          "width": 525,
+          "height": 1283
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/27.webp",
+          "width": 526,
+          "height": 636
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-b/28.webp",
+          "width": 1064,
+          "height": 424
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-b/29.webp",
+          "width": 1064,
+          "height": 840
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-b/30.webp",
+          "width": 528,
+          "height": 1292
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-b/31.webp",
+          "width": 526,
+          "height": 702
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-b/32.webp",
+          "width": 525,
+          "height": 1284
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-b/33.webp",
+          "width": 526,
+          "height": 1046
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-b/34.webp",
+          "width": 1064,
+          "height": 1283
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-b/35.webp",
+          "width": 1064,
+          "height": 868
+        }
+      ]
+    },
+    {
+      "id": "2014-e",
+      "year": 2014,
+      "course": "Engenharia de Computação",
+      "booklet": "Engenharia de Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2014-e/1.webp",
+          "width": 1064,
+          "height": 724
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2014-e/2.webp",
+          "width": 1064,
+          "height": 551
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2014-e/3.webp",
+          "width": 1064,
+          "height": 1281
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2014-e/4.webp",
+          "width": 525,
+          "height": 1283
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2014-e/5.webp",
+          "width": 526,
+          "height": 1284
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2014-e/6.webp",
+          "width": 1064,
+          "height": 1292
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2014-e/7.webp",
+          "width": 528,
+          "height": 1287
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2014-e/8.webp",
+          "width": 526,
+          "height": 1273
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-e/9.webp",
+          "width": 525,
+          "height": 852
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-e/10.webp",
+          "width": 526,
+          "height": 1008
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-e/11.webp",
+          "width": 1064,
+          "height": 1291
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-e/12.webp",
+          "width": 528,
+          "height": 1289
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-e/13.webp",
+          "width": 527,
+          "height": 1292
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-e/14.webp",
+          "width": 527,
+          "height": 2541
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-e/15.webp",
+          "width": 525,
+          "height": 1021
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-e/16.webp",
+          "width": 526,
+          "height": 1028
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-e/17.webp",
+          "width": 1064,
+          "height": 1252
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-e/18.webp",
+          "width": 1064,
+          "height": 414
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-e/19.webp",
+          "width": 524,
+          "height": 1280
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-e/20.webp",
+          "width": 526,
+          "height": 1269
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-e/21.webp",
+          "width": 529,
+          "height": 1286
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-e/22.webp",
+          "width": 526,
+          "height": 1280
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-e/23.webp",
+          "width": 528,
+          "height": 1291
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-e/24.webp",
+          "width": 526,
+          "height": 1122
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-e/25.webp",
+          "width": 1064,
+          "height": 1265
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-e/26.webp",
+          "width": 1064,
+          "height": 1289
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2014-e/27.webp",
+          "width": 1065,
+          "height": 1287
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-e/28.webp",
+          "width": 1064,
+          "height": 958
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-e/29.webp",
+          "width": 525,
+          "height": 678
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2014-e/30.webp",
+          "width": 526,
+          "height": 1087
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-e/31.webp",
+          "width": 525,
+          "height": 641
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-e/32.webp",
+          "width": 525,
+          "height": 329
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-e/33.webp",
+          "width": 526,
+          "height": 1287
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2014-e/34.webp",
+          "width": 1064,
+          "height": 1266
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-e/35.webp",
+          "width": 809,
+          "height": 978
+        }
+      ]
+    },
+    {
+      "id": "2014-l",
+      "year": 2014,
+      "course": "Computação (Licenciatura)",
+      "booklet": "Computação (Licenciatura)",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2014-l/1.webp",
+          "width": 1064,
+          "height": 724
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2014-l/2.webp",
+          "width": 1064,
+          "height": 551
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2014-l/3.webp",
+          "width": 1064,
+          "height": 1281
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2014-l/4.webp",
+          "width": 525,
+          "height": 1283
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2014-l/5.webp",
+          "width": 526,
+          "height": 1284
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2014-l/6.webp",
+          "width": 1064,
+          "height": 1292
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2014-l/7.webp",
+          "width": 528,
+          "height": 1287
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2014-l/8.webp",
+          "width": 526,
+          "height": 1273
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/9.webp",
+          "width": 1064,
+          "height": 1281
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-l/10.webp",
+          "width": 525,
+          "height": 834
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/11.webp",
+          "width": 526,
+          "height": 963
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-l/12.webp",
+          "width": 1064,
+          "height": 1285
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/13.webp",
+          "width": 528,
+          "height": 1291
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/14.webp",
+          "width": 526,
+          "height": 521
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-l/15.webp",
+          "width": 526,
+          "height": 572
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-l/16.webp",
+          "width": 525,
+          "height": 2525
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-l/17.webp",
+          "width": 1064,
+          "height": 546
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-l/18.webp",
+          "width": 1064,
+          "height": 456
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/19.webp",
+          "width": 511,
+          "height": 830
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-l/20.webp",
+          "width": 526,
+          "height": 1284
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-l/21.webp",
+          "width": 526,
+          "height": 960
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-l/22.webp",
+          "width": 526,
+          "height": 880
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-l/23.webp",
+          "width": 1064,
+          "height": 1109
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-l/24.webp",
+          "width": 529,
+          "height": 1292
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-l/25.webp",
+          "width": 526,
+          "height": 720
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-l/26.webp",
+          "width": 525,
+          "height": 962
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-l/27.webp",
+          "width": 526,
+          "height": 965
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-l/28.webp",
+          "width": 1064,
+          "height": 1264
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/29.webp",
+          "width": 525,
+          "height": 927
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2014-l/30.webp",
+          "width": 526,
+          "height": 1053
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-l/31.webp",
+          "width": 1064,
+          "height": 1283
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2014-l/32.webp",
+          "width": 1064,
+          "height": 1279
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2014-l/33.webp",
+          "width": 525,
+          "height": 1277
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2014-l/34.webp",
+          "width": 526,
+          "height": 969
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2014-l/35.webp",
+          "width": 1064,
+          "height": 974
+        }
+      ]
+    },
+    {
+      "id": "2017-b",
+      "year": 2017,
+      "course": "Ciência da Computação (Bacharelado)",
+      "booklet": "Ciência da Computação (Bacharelado)",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-b/1.webp",
+          "width": 1030,
+          "height": 1354
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-b/2.webp",
+          "width": 1030,
+          "height": 734
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-b/3.webp",
+          "width": 1030,
+          "height": 1349
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-b/4.webp",
+          "width": 1031,
+          "height": 1145
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-b/5.webp",
+          "width": 1053,
+          "height": 1138
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2017-b/6.webp",
+          "width": 1030,
+          "height": 1050
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2017-b/7.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2017-b/8.webp",
+          "width": 1029,
+          "height": 1359
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-b/9.webp",
+          "width": 1030,
+          "height": 1338
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-b/10.webp",
+          "width": 511,
+          "height": 1169
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/11.webp",
+          "width": 510,
+          "height": 878
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-b/12.webp",
+          "width": 1030,
+          "height": 1355
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-b/13.webp",
+          "width": 1030,
+          "height": 846
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-b/14.webp",
+          "width": 1030,
+          "height": 509
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-b/15.webp",
+          "width": 511,
+          "height": 1347
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/16.webp",
+          "width": 510,
+          "height": 1350
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-b/17.webp",
+          "width": 511,
+          "height": 1056
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-b/18.webp",
+          "width": 510,
+          "height": 1351
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/19.webp",
+          "width": 1030,
+          "height": 952
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-b/20.webp",
+          "width": 1030,
+          "height": 465
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-b/21.webp",
+          "width": 1030,
+          "height": 533
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-b/22.webp",
+          "width": 511,
+          "height": 1359
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-b/23.webp",
+          "width": 510,
+          "height": 997
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/24.webp",
+          "width": 511,
+          "height": 1192
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-b/25.webp",
+          "width": 510,
+          "height": 1011
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/26.webp",
+          "width": 511,
+          "height": 933
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-b/27.webp",
+          "width": 510,
+          "height": 1360
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-b/28.webp",
+          "width": 511,
+          "height": 996
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/29.webp",
+          "width": 510,
+          "height": 1001
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-b/30.webp",
+          "width": 1030,
+          "height": 913
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/31.webp",
+          "width": 936,
+          "height": 1355
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-b/32.webp",
+          "width": 1030,
+          "height": 1354
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-b/33.webp",
+          "width": 1030,
+          "height": 794
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-b/34.webp",
+          "width": 1030,
+          "height": 943
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-b/35.webp",
+          "width": 1030,
+          "height": 815
+        }
+      ]
+    },
+    {
+      "id": "2017-e",
+      "year": 2017,
+      "course": "Engenharia de Computação",
+      "booklet": "Engenharia de Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-e/1.webp",
+          "width": 1030,
+          "height": 1354
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-e/2.webp",
+          "width": 1030,
+          "height": 734
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-e/3.webp",
+          "width": 1030,
+          "height": 1349
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-e/4.webp",
+          "width": 1031,
+          "height": 1145
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-e/5.webp",
+          "width": 1053,
+          "height": 1138
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2017-e/6.webp",
+          "width": 1030,
+          "height": 1050
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2017-e/7.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2017-e/8.webp",
+          "width": 1029,
+          "height": 1359
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-e/9.webp",
+          "width": 514,
+          "height": 941
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-e/10.webp",
+          "width": 510,
+          "height": 1352
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-e/11.webp",
+          "width": 514,
+          "height": 1361
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/12.webp",
+          "width": 510,
+          "height": 749
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-e/13.webp",
+          "width": 510,
+          "height": 569
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/14.webp",
+          "width": 1030,
+          "height": 1116
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-e/15.webp",
+          "width": 514,
+          "height": 754
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-e/16.webp",
+          "width": 510,
+          "height": 857
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-e/17.webp",
+          "width": 511,
+          "height": 1353
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-e/18.webp",
+          "width": 510,
+          "height": 1083
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-e/19.webp",
+          "width": 1029,
+          "height": 1332
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/20.webp",
+          "width": 511,
+          "height": 741
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-e/21.webp",
+          "width": 510,
+          "height": 945
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/22.webp",
+          "width": 1030,
+          "height": 1330
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-e/23.webp",
+          "width": 1030,
+          "height": 1117
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-e/24.webp",
+          "width": 514,
+          "height": 1357
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-e/25.webp",
+          "width": 510,
+          "height": 916
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/26.webp",
+          "width": 1030,
+          "height": 1348
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-e/27.webp",
+          "width": 1029,
+          "height": 1124
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/28.webp",
+          "width": 511,
+          "height": 1186
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/29.webp",
+          "width": 510,
+          "height": 1099
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/30.webp",
+          "width": 514,
+          "height": 743
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-e/31.webp",
+          "width": 510,
+          "height": 1174
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-e/32.webp",
+          "width": 1030,
+          "height": 1123
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-e/33.webp",
+          "width": 1030,
+          "height": 798
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-e/34.webp",
+          "width": 1030,
+          "height": 803
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-e/35.webp",
+          "width": 1029,
+          "height": 1008
+        }
+      ]
+    },
+    {
+      "id": "2017-l",
+      "year": 2017,
+      "course": "Computação (Licenciatura)",
+      "booklet": "Computação (Licenciatura)",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-l/1.webp",
+          "width": 1030,
+          "height": 1354
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-l/2.webp",
+          "width": 1030,
+          "height": 734
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-l/3.webp",
+          "width": 1030,
+          "height": 1349
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-l/4.webp",
+          "width": 1031,
+          "height": 1145
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-l/5.webp",
+          "width": 1053,
+          "height": 1138
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2017-l/6.webp",
+          "width": 1030,
+          "height": 1050
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2017-l/7.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2017-l/8.webp",
+          "width": 1029,
+          "height": 1359
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-l/9.webp",
+          "width": 1030,
+          "height": 1338
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-l/10.webp",
+          "width": 511,
+          "height": 1169
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-l/11.webp",
+          "width": 510,
+          "height": 878
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-l/12.webp",
+          "width": 1030,
+          "height": 1355
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-l/13.webp",
+          "width": 1030,
+          "height": 846
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-l/14.webp",
+          "width": 1030,
+          "height": 509
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-l/15.webp",
+          "width": 511,
+          "height": 1347
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-l/16.webp",
+          "width": 510,
+          "height": 1350
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-l/17.webp",
+          "width": 511,
+          "height": 1056
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-l/18.webp",
+          "width": 510,
+          "height": 1351
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-l/19.webp",
+          "width": 1030,
+          "height": 952
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-l/20.webp",
+          "width": 1030,
+          "height": 464
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-l/21.webp",
+          "width": 1030,
+          "height": 532
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-l/22.webp",
+          "width": 514,
+          "height": 1360
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-l/23.webp",
+          "width": 510,
+          "height": 918
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-l/24.webp",
+          "width": 511,
+          "height": 1349
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-l/25.webp",
+          "width": 510,
+          "height": 1130
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-l/26.webp",
+          "width": 1031,
+          "height": 1059
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-l/27.webp",
+          "width": 511,
+          "height": 542
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-l/28.webp",
+          "width": 523,
+          "height": 801
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-l/29.webp",
+          "width": 510,
+          "height": 1124
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-l/30.webp",
+          "width": 1030,
+          "height": 638
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-l/31.webp",
+          "width": 1030,
+          "height": 709
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-l/32.webp",
+          "width": 514,
+          "height": 942
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-l/33.webp",
+          "width": 510,
+          "height": 1316
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-l/34.webp",
+          "width": 510,
+          "height": 1173
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-l/35.webp",
+          "width": 509,
+          "height": 892
+        }
+      ]
+    },
+    {
+      "id": "2017-s",
+      "year": 2017,
+      "course": "Sistemas de Informação",
+      "booklet": "Sistemas de Informação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-s/1.webp",
+          "width": 1030,
+          "height": 1354
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-s/2.webp",
+          "width": 1030,
+          "height": 734
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-s/3.webp",
+          "width": 1030,
+          "height": 1349
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2017-s/4.webp",
+          "width": 1031,
+          "height": 1145
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2017-s/5.webp",
+          "width": 1053,
+          "height": 1138
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2017-s/6.webp",
+          "width": 1030,
+          "height": 1050
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2017-s/7.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2017-s/8.webp",
+          "width": 1029,
+          "height": 1359
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-s/9.webp",
+          "width": 511,
+          "height": 1179
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-s/10.webp",
+          "width": 512,
+          "height": 862
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-s/11.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-s/12.webp",
+          "width": 1030,
+          "height": 755
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-s/13.webp",
+          "width": 1030,
+          "height": 1171
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2017-s/14.webp",
+          "width": 1030,
+          "height": 980
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-s/15.webp",
+          "width": 514,
+          "height": 1347
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-s/16.webp",
+          "width": 510,
+          "height": 942
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/17.webp",
+          "width": 1030,
+          "height": 1344
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/18.webp",
+          "width": 514,
+          "height": 1358
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/19.webp",
+          "width": 523,
+          "height": 1356
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-s/20.webp",
+          "width": 1030,
+          "height": 1333
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/21.webp",
+          "width": 1061,
+          "height": 1873
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-s/22.webp",
+          "width": 1030,
+          "height": 428
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-s/23.webp",
+          "width": 1030,
+          "height": 1148
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/24.webp",
+          "width": 511,
+          "height": 1201
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/25.webp",
+          "width": 510,
+          "height": 864
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-s/26.webp",
+          "width": 514,
+          "height": 1145
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-s/27.webp",
+          "width": 510,
+          "height": 1141
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2017-s/28.webp",
+          "width": 511,
+          "height": 956
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2017-s/29.webp",
+          "width": 510,
+          "height": 1352
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-s/30.webp",
+          "width": 514,
+          "height": 1070
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2017-s/31.webp",
+          "width": 510,
+          "height": 1155
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2017-s/32.webp",
+          "width": 1030,
+          "height": 1032
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-s/33.webp",
+          "width": 514,
+          "height": 1090
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-s/34.webp",
+          "width": 511,
+          "height": 1003
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2017-s/35.webp",
+          "width": 1030,
+          "height": 846
+        }
+      ]
+    },
+    {
+      "id": "2019-e",
+      "year": 2019,
+      "course": "Engenharia de Computação",
+      "booklet": "Engenharia de Computação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": null,
+          "image": "q/2019-e/1.webp",
+          "width": 1030,
+          "height": 683
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2019-e/2.webp",
+          "width": 1030,
+          "height": 1364
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2019-e/3.webp",
+          "width": 1030,
+          "height": 861
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2019-e/4.webp",
+          "width": 1030,
+          "height": 859
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2019-e/5.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2019-e/6.webp",
+          "width": 1030,
+          "height": 1359
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2019-e/7.webp",
+          "width": 1030,
+          "height": 1357
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2019-e/8.webp",
+          "width": 1030,
+          "height": 882
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2019-e/9.webp",
+          "width": 1030,
+          "height": 1347
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2019-e/10.webp",
+          "width": 510,
+          "height": 1053
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2019-e/11.webp",
+          "width": 511,
+          "height": 808
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2019-e/12.webp",
+          "width": 1029,
+          "height": 977
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2019-e/13.webp",
+          "width": 1030,
+          "height": 1334
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2019-e/14.webp",
+          "width": 1030,
+          "height": 1323
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2019-e/15.webp",
+          "width": 1030,
+          "height": 818
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2019-e/16.webp",
+          "width": 1030,
+          "height": 1355
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2019-e/17.webp",
+          "width": 1030,
+          "height": 948
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2019-e/18.webp",
+          "width": 516,
+          "height": 1032
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2019-e/19.webp",
+          "width": 513,
+          "height": 1135
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2019-e/20.webp",
+          "width": 1030,
+          "height": 1356
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2019-e/21.webp",
+          "width": 1030,
+          "height": 946
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2019-e/22.webp",
+          "width": 1030,
+          "height": 1267
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2019-e/23.webp",
+          "width": 510,
+          "height": 719
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2019-e/24.webp",
+          "width": 511,
+          "height": 1362
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2019-e/25.webp",
+          "width": 1030,
+          "height": 1363
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2019-e/26.webp",
+          "width": 1030,
+          "height": 1372
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2019-e/27.webp",
+          "width": 1030,
+          "height": 1001
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2019-e/28.webp",
+          "width": 510,
+          "height": 1040
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2019-e/29.webp",
+          "width": 511,
+          "height": 1361
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2019-e/30.webp",
+          "width": 1030,
+          "height": 1007
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2019-e/31.webp",
+          "width": 1030,
+          "height": 968
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2019-e/32.webp",
+          "width": 1030,
+          "height": 1241
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2019-e/33.webp",
+          "width": 1030,
+          "height": 865
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2019-e/34.webp",
+          "width": 1030,
+          "height": 543
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2019-e/35.webp",
+          "width": 1030,
+          "height": 304
+        }
+      ]
+    },
+    {
+      "id": "2021-b",
+      "year": 2021,
+      "course": "Ciência da Computação (Bacharelado)",
+      "booklet": "Ciência da Computação (Bacharelado)",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2021-b/1.webp",
+          "width": 1030,
+          "height": 1017
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2021-b/2.webp",
+          "width": 1030,
+          "height": 2356
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2021-b/3.webp",
+          "width": 1030,
+          "height": 1329
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2021-b/4.webp",
+          "width": 1030,
+          "height": 1007
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2021-b/5.webp",
+          "width": 1030,
+          "height": 1861
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2021-b/6.webp",
+          "width": 1030,
+          "height": 816
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2021-b/7.webp",
+          "width": 1030,
+          "height": 1334
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2021-b/8.webp",
+          "width": 1029,
+          "height": 1024
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/9.webp",
+          "width": 511,
+          "height": 966
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-b/10.webp",
+          "width": 511,
+          "height": 965
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-b/11.webp",
+          "width": 1030,
+          "height": 1335
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-b/12.webp",
+          "width": 1030,
+          "height": 681
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/13.webp",
+          "width": 1030,
+          "height": 641
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-b/14.webp",
+          "width": 1030,
+          "height": 1094
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-b/15.webp",
+          "width": 1030,
+          "height": 721
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-b/16.webp",
+          "width": 1030,
+          "height": 1336
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-b/17.webp",
+          "width": 1031,
+          "height": 1792
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/18.webp",
+          "width": 1030,
+          "height": 843
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-b/19.webp",
+          "width": 1030,
+          "height": 861
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-b/20.webp",
+          "width": 1028,
+          "height": 1332
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/21.webp",
+          "width": 1030,
+          "height": 1322
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-b/22.webp",
+          "width": 1030,
+          "height": 1204
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-b/23.webp",
+          "width": 1030,
+          "height": 1321
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/24.webp",
+          "width": 1030,
+          "height": 911
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-b/25.webp",
+          "width": 1030,
+          "height": 953
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-b/26.webp",
+          "width": 1030,
+          "height": 807
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-b/27.webp",
+          "width": 1030,
+          "height": 871
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-b/28.webp",
+          "width": 1030,
+          "height": 1777
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2021-b/29.webp",
+          "width": 1030,
+          "height": 1164
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/30.webp",
+          "width": 1030,
+          "height": 844
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-b/31.webp",
+          "width": 1030,
+          "height": 1335
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-b/32.webp",
+          "width": 1030,
+          "height": 1319
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2021-b/33.webp",
+          "width": 1030,
+          "height": 1003
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-b/34.webp",
+          "width": 1030,
+          "height": 799
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-b/35.webp",
+          "width": 1030,
+          "height": 521
+        }
+      ]
+    },
+    {
+      "id": "2021-l",
+      "year": 2021,
+      "course": "Computação (Licenciatura)",
+      "booklet": "Computação (Licenciatura)",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2021-l/1.webp",
+          "width": 1030,
+          "height": 1017
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2021-l/2.webp",
+          "width": 1030,
+          "height": 2356
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2021-l/3.webp",
+          "width": 1030,
+          "height": 1329
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2021-l/4.webp",
+          "width": 1030,
+          "height": 1007
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2021-l/5.webp",
+          "width": 1030,
+          "height": 1861
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2021-l/6.webp",
+          "width": 1030,
+          "height": 816
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2021-l/7.webp",
+          "width": 1030,
+          "height": 1334
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2021-l/8.webp",
+          "width": 1029,
+          "height": 1024
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-l/9.webp",
+          "width": 511,
+          "height": 966
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-l/10.webp",
+          "width": 511,
+          "height": 965
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-l/11.webp",
+          "width": 1030,
+          "height": 1335
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-l/12.webp",
+          "width": 1030,
+          "height": 681
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-l/13.webp",
+          "width": 1030,
+          "height": 644
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-l/14.webp",
+          "width": 1030,
+          "height": 1094
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-l/15.webp",
+          "width": 1030,
+          "height": 721
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-l/16.webp",
+          "width": 1030,
+          "height": 1336
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-l/17.webp",
+          "width": 1031,
+          "height": 1790
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-l/18.webp",
+          "width": 1030,
+          "height": 843
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-l/19.webp",
+          "width": 1030,
+          "height": 861
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-l/20.webp",
+          "width": 1028,
+          "height": 1332
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-l/21.webp",
+          "width": 1030,
+          "height": 1322
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-l/22.webp",
+          "width": 1030,
+          "height": 1203
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-l/23.webp",
+          "width": 1030,
+          "height": 1321
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-l/24.webp",
+          "width": 1030,
+          "height": 911
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-l/25.webp",
+          "width": 1030,
+          "height": 953
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-l/26.webp",
+          "width": 510,
+          "height": 1326
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-l/27.webp",
+          "width": 511,
+          "height": 1330
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-l/28.webp",
+          "width": 1030,
+          "height": 956
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-l/29.webp",
+          "width": 510,
+          "height": 1332
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-l/30.webp",
+          "width": 511,
+          "height": 1332
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-l/31.webp",
+          "width": 510,
+          "height": 1333
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-l/32.webp",
+          "width": 511,
+          "height": 1054
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-l/33.webp",
+          "width": 1030,
+          "height": 851
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-l/34.webp",
+          "width": 1030,
+          "height": 1135
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-l/35.webp",
+          "width": 1030,
+          "height": 803
+        }
+      ]
+    },
+    {
+      "id": "2021-s",
+      "year": 2021,
+      "course": "Sistemas de Informação",
+      "booklet": "Sistemas de Informação",
+      "questions": [
+        {
+          "n": 1,
+          "section": "FG",
+          "answer": "E",
+          "image": "q/2021-s/1.webp",
+          "width": 1030,
+          "height": 1017
+        },
+        {
+          "n": 2,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2021-s/2.webp",
+          "width": 1030,
+          "height": 2356
+        },
+        {
+          "n": 3,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2021-s/3.webp",
+          "width": 1030,
+          "height": 1329
+        },
+        {
+          "n": 4,
+          "section": "FG",
+          "answer": "B",
+          "image": "q/2021-s/4.webp",
+          "width": 1030,
+          "height": 1007
+        },
+        {
+          "n": 5,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2021-s/5.webp",
+          "width": 1030,
+          "height": 1861
+        },
+        {
+          "n": 6,
+          "section": "FG",
+          "answer": "A",
+          "image": "q/2021-s/6.webp",
+          "width": 1030,
+          "height": 816
+        },
+        {
+          "n": 7,
+          "section": "FG",
+          "answer": "C",
+          "image": "q/2021-s/7.webp",
+          "width": 1030,
+          "height": 1334
+        },
+        {
+          "n": 8,
+          "section": "FG",
+          "answer": "D",
+          "image": "q/2021-s/8.webp",
+          "width": 1029,
+          "height": 1024
+        },
+        {
+          "n": 9,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-s/9.webp",
+          "width": 1030,
+          "height": 976
+        },
+        {
+          "n": 10,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-s/10.webp",
+          "width": 1030,
+          "height": 1331
+        },
+        {
+          "n": 11,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-s/11.webp",
+          "width": 510,
+          "height": 1178
+        },
+        {
+          "n": 12,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-s/12.webp",
+          "width": 511,
+          "height": 1334
+        },
+        {
+          "n": 13,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-s/13.webp",
+          "width": 510,
+          "height": 1331
+        },
+        {
+          "n": 14,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-s/14.webp",
+          "width": 511,
+          "height": 1334
+        },
+        {
+          "n": 15,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-s/15.webp",
+          "width": 1030,
+          "height": 493
+        },
+        {
+          "n": 16,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-s/16.webp",
+          "width": 1030,
+          "height": 832
+        },
+        {
+          "n": 17,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-s/17.webp",
+          "width": 1030,
+          "height": 599
+        },
+        {
+          "n": 18,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-s/18.webp",
+          "width": 1030,
+          "height": 520
+        },
+        {
+          "n": 19,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-s/19.webp",
+          "width": 1030,
+          "height": 606
+        },
+        {
+          "n": 20,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-s/20.webp",
+          "width": 1030,
+          "height": 720
+        },
+        {
+          "n": 21,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-s/21.webp",
+          "width": 1030,
+          "height": 1334
+        },
+        {
+          "n": 22,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-s/22.webp",
+          "width": 1030,
+          "height": 771
+        },
+        {
+          "n": 23,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-s/23.webp",
+          "width": 1030,
+          "height": 2482
+        },
+        {
+          "n": 24,
+          "section": "CE",
+          "answer": "B",
+          "image": "q/2021-s/24.webp",
+          "width": 1030,
+          "height": 1325
+        },
+        {
+          "n": 25,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-s/25.webp",
+          "width": 1030,
+          "height": 813
+        },
+        {
+          "n": 26,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-s/26.webp",
+          "width": 1030,
+          "height": 877
+        },
+        {
+          "n": 27,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-s/27.webp",
+          "width": 1030,
+          "height": 449
+        },
+        {
+          "n": 28,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-s/28.webp",
+          "width": 1030,
+          "height": 960
+        },
+        {
+          "n": 29,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-s/29.webp",
+          "width": 1030,
+          "height": 1984
+        },
+        {
+          "n": 30,
+          "section": "CE",
+          "answer": "E",
+          "image": "q/2021-s/30.webp",
+          "width": 1030,
+          "height": 668
+        },
+        {
+          "n": 31,
+          "section": "CE",
+          "answer": "A",
+          "image": "q/2021-s/31.webp",
+          "width": 1032,
+          "height": 833
+        },
+        {
+          "n": 32,
+          "section": "CE",
+          "answer": "C",
+          "image": "q/2021-s/32.webp",
+          "width": 1030,
+          "height": 1332
+        },
+        {
+          "n": 33,
+          "section": "CE",
+          "answer": null,
+          "image": "q/2021-s/33.webp",
+          "width": 1030,
+          "height": 2664
+        },
+        {
+          "n": 34,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-s/34.webp",
+          "width": 1030,
+          "height": 1032
+        },
+        {
+          "n": 35,
+          "section": "CE",
+          "answer": "D",
+          "image": "q/2021-s/35.webp",
+          "width": 1030,
+          "height": 737
+        }
+      ]
+    }
+  ]
+}
