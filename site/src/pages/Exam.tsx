@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router'
 import { AnswerBar } from '../components/AnswerBar'
 import { ArrowLeftIcon, ArrowRightIcon, GridIcon } from '../components/icons'
@@ -30,7 +30,7 @@ const navButton =
 function ExamView({ version }: { version: ExamVersion }) {
   const navigate = useNavigate()
   const [params, setParams] = useSearchParams()
-  const { attempt, setAnswer, finish } = useAttempt(version)
+  const { attempt, setAnswer, finish, latest } = useAttempt(version)
   const [confirming, setConfirming] = useState(false)
   const [gridOpen, setGridOpen] = useState(false)
 
@@ -59,27 +59,41 @@ function ExamView({ version }: { version: ExamVersion }) {
     if (next) new Image().src = imageUrl(next) // pré-carrega a próxima
   }, [index, questions])
 
-  const goTo = (i: number) => {
-    const target = questions[Math.min(Math.max(i, 0), questions.length - 1)]
-    setParams({ q: String(target.n) }, { replace: true })
-    setGridOpen(false)
-  }
+  // Questão aberta "de verdade": goTo atualiza na hora, antes de o React
+  // redesenhar. Teclas em sequência rápida leem daqui, não do render.
+  const indexRef = useRef(index)
+  useLayoutEffect(() => {
+    indexRef.current = index
+  }, [index])
+
+  const goTo = useCallback(
+    (i: number) => {
+      const target = Math.min(Math.max(i, 0), questions.length - 1)
+      indexRef.current = target
+      setParams({ q: String(questions[target].n) }, { replace: true })
+      setGridOpen(false)
+    },
+    [questions, setParams],
+  )
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (document.querySelector('dialog[open]')) return
       const action = keyToAction(e)
       if (!action) return
-      if (action.type === 'prev') goTo(index - 1)
-      else if (action.type === 'next') goTo(index + 1)
-      else if (review) return
-      else if (action.type === 'clear') setAnswer(question.n, null)
-      else setAnswer(question.n, attempt.answers[question.n] === action.letter ? null : action.letter)
+      const current = indexRef.current
+      const q = questions[current]
+      const now = latest()
+      if (action.type === 'prev') goTo(current - 1)
+      else if (action.type === 'next') goTo(current + 1)
+      else if (now.finishedAt) return
+      else if (action.type === 'clear') setAnswer(q.n, null)
+      else setAnswer(q.n, now.answers[q.n] === action.letter ? null : action.letter)
       e.preventDefault()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  })
+  }, [questions, goTo, setAnswer, latest])
 
   const blanks = blankNumbers(questions, attempt.answers)
   const progress = Math.round((answered / questions.length) * 100)

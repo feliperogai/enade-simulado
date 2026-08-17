@@ -17,6 +17,8 @@ export function useAttempt(version: ExamVersion) {
   )
   const finish = useCallback(() => setAttempt(controller.finish()), [controller])
   const reset = useCallback(() => setAttempt(controller.reset()), [controller])
+  /** Estado mais recente, mesmo antes de o React redesenhar (para eventos em sequência). */
+  const latest = controller.get
 
-  return { attempt, setAnswer, finish, reset }
+  return { attempt, setAnswer, finish, reset, latest }
 }
