@@ -14,17 +14,21 @@ const version: ExamVersion = {
 describe('createAttemptController', () => {
   it('grava no armazenamento na hora (antes de qualquer re-render)', () => {
     const store = createStore(null)
-    const ctrl = createAttemptController(store, version)
+    const ctrl = createAttemptController(store, version, () => new Date('2026-10-13T12:00:00.000Z'))
     ctrl.setAnswer(1, 'B')
-    ctrl.finish(new Date('2026-10-13T12:00:00.000Z'))
-    expect(store.load('2017-b')).toEqual({ answers: { 1: 'B' }, finishedAt: '2026-10-13T12:00:00.000Z' })
+    ctrl.finish()
+    expect(store.load('2017-b')).toEqual({
+      answers: { 1: 'B' },
+      finishedAt: '2026-10-13T12:00:00.000Z',
+      updatedAt: '2026-10-13T12:00:00.000Z',
+    })
   })
 
   it('mudanças seguidas se acumulam', () => {
     const ctrl = createAttemptController(createStore(null), version)
     ctrl.setAnswer(1, 'A')
     ctrl.setAnswer(2, 'C')
-    expect(ctrl.setAnswer(1, null)).toEqual({ answers: { 2: 'C' } })
+    expect(ctrl.setAnswer(1, null).answers).toEqual({ 2: 'C' })
   })
 
   it('ignora respostas salvas de questões que não existem na versão', () => {
@@ -40,5 +44,12 @@ describe('createAttemptController', () => {
     ctrl.finish()
     expect(ctrl.reset()).toEqual({ answers: {} })
     expect(store.load('2017-b')).toEqual({ answers: {} })
+  })
+
+  it('marca a hora da última mudança', () => {
+    const store = createStore(null)
+    const ctrl = createAttemptController(store, version, () => new Date('2026-10-14T08:00:00.000Z'))
+    expect(ctrl.setAnswer(1, 'C').updatedAt).toBe('2026-10-14T08:00:00.000Z')
+    expect(store.load('2017-b').updatedAt).toBe('2026-10-14T08:00:00.000Z')
   })
 })

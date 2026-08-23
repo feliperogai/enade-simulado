@@ -72,4 +72,13 @@ describe('storage', () => {
     kv.data.set('enade:theme', 'blue')
     expect(store.loadTheme()).toBeNull()
   })
+
+  it('guarda updatedAt e descarta valor inválido', () => {
+    const kv = memoryKV()
+    const store = createStore(kv)
+    store.save('2017-b', { answers: { 1: 'A' }, updatedAt: '2026-10-14T10:00:00.000Z' })
+    expect(store.load('2017-b')).toEqual({ answers: { 1: 'A' }, updatedAt: '2026-10-14T10:00:00.000Z' })
+    kv.data.set('enade:v1:2017-b', JSON.stringify({ answers: {}, updatedAt: 42 }))
+    expect(store.load('2017-b')).toEqual({ answers: {} })
+  })
 })

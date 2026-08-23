@@ -5,6 +5,8 @@ export type Theme = 'light' | 'dark'
 export interface Attempt {
   answers: Answers
   finishedAt?: string
+  /** última mudança (para "continuar de onde parou") */
+  updatedAt?: string
 }
 
 export interface KV {
@@ -44,7 +46,7 @@ function parseAttempt(raw: string | null): Attempt {
     return { answers: {} }
   }
   if (typeof value !== 'object' || value === null) return { answers: {} }
-  const { answers, finishedAt } = value as Record<string, unknown>
+  const { answers, finishedAt, updatedAt } = value as Record<string, unknown>
 
   const clean: Answers = {}
   if (typeof answers === 'object' && answers !== null) {
@@ -53,7 +55,10 @@ function parseAttempt(raw: string | null): Attempt {
       if (Number.isInteger(n) && n > 0 && isLetter(letter)) clean[n] = letter
     }
   }
-  return typeof finishedAt === 'string' ? { answers: clean, finishedAt } : { answers: clean }
+  const attempt: Attempt = { answers: clean }
+  if (typeof finishedAt === 'string') attempt.finishedAt = finishedAt
+  if (typeof updatedAt === 'string') attempt.updatedAt = updatedAt
+  return attempt
 }
 
 /**
