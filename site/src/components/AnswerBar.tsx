@@ -7,16 +7,19 @@ interface Props {
   review?: { correct: Letter | null }
 }
 
+const BASE =
+  'relative flex-1 rounded-xl font-display text-lg font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-ink'
+
 function letterClass(letter: Letter, value: Letter | null, review: Props['review']): string {
-  const base =
-    'flex-1 rounded-xl text-lg font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:ring-offset-zinc-950'
   if (review) {
-    if (letter === review.correct) return `${base} bg-emerald-600 text-white`
-    if (letter === value) return `${base} bg-rose-600 text-white`
-    return `${base} bg-zinc-100 text-zinc-400 dark:bg-zinc-900 dark:text-zinc-600`
+    if (letter === review.correct)
+      return `${BASE} bg-linear-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/25`
+    if (letter === value) return `${BASE} bg-linear-to-br from-rose-500 to-pink-600 text-white shadow-lg shadow-rose-500/25`
+    return `${BASE} bg-slate-900/[0.03] text-slate-400 dark:bg-white/[0.03] dark:text-slate-600`
   }
-  if (letter === value) return `${base} bg-indigo-600 text-white shadow-md shadow-indigo-600/25 dark:bg-indigo-500`
-  return `${base} bg-white text-zinc-700 ring-1 ring-zinc-200 hover:bg-indigo-50 hover:ring-indigo-300 active:scale-95 dark:bg-zinc-900 dark:text-zinc-200 dark:ring-zinc-700 dark:hover:bg-indigo-500/10`
+  if (letter === value)
+    return `${BASE} -translate-y-0.5 bg-linear-to-br from-violet-500 to-indigo-600 text-white shadow-lg shadow-violet-500/35`
+  return `${BASE} bg-slate-900/[0.04] text-slate-700 ring-1 ring-slate-900/10 hover:-translate-y-0.5 hover:bg-violet-500/10 hover:text-violet-700 hover:ring-violet-400/50 active:scale-95 dark:bg-white/[0.05] dark:text-slate-200 dark:ring-white/10 dark:hover:text-white`
 }
 
 export function AnswerBar({ value, onChange, review }: Props) {

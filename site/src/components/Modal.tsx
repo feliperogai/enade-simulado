@@ -30,7 +30,7 @@ export function Modal({ open, onClose, label, className = '', children }: ModalP
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose() // clique no fundo
       }}
-      className={`bg-transparent p-0 text-zinc-900 backdrop:bg-zinc-950/60 backdrop:backdrop-blur-sm dark:text-zinc-100 ${className}`}
+      className={`bg-transparent p-0 text-slate-900 backdrop:bg-slate-950/60 backdrop:backdrop-blur-md dark:text-slate-100 ${className}`}
     >
       {open && children}
     </dialog>
@@ -50,14 +50,15 @@ interface ConfirmDialogProps {
 export function ConfirmDialog({ open, title, confirmLabel, cancelLabel, onConfirm, onCancel, children }: ConfirmDialogProps) {
   return (
     <Modal open={open} onClose={onCancel} label={title} className="m-auto w-[calc(100%-2rem)] max-w-md">
-      <div className="rounded-2xl bg-white p-6 shadow-xl dark:bg-zinc-900">
-        <h2 className="text-lg font-semibold">{title}</h2>
-        <div className="mt-2 text-zinc-600 dark:text-zinc-400">{children}</div>
-        <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+      <div className="relative overflow-hidden rounded-3xl border border-slate-900/10 bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#0d0d18]">
+        <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-violet-500/20 blur-3xl" />
+        <h2 className="relative font-display text-xl font-bold">{title}</h2>
+        <div className="relative mt-2 text-slate-600 dark:text-slate-300">{children}</div>
+        <div className="relative mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
           <button
             type="button"
             onClick={onCancel}
-            className="rounded-xl px-4 py-2.5 font-medium text-zinc-700 ring-1 ring-zinc-200 transition hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-zinc-200 dark:ring-zinc-700 dark:hover:bg-zinc-800"
+            className="rounded-xl px-4 py-2.5 font-semibold text-slate-700 ring-1 ring-slate-900/10 transition hover:bg-slate-900/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:text-slate-200 dark:ring-white/10 dark:hover:bg-white/[0.07]"
           >
             {cancelLabel}
           </button>
@@ -65,7 +66,7 @@ export function ConfirmDialog({ open, title, confirmLabel, cancelLabel, onConfir
             type="button"
             onClick={onConfirm}
             autoFocus
-            className="rounded-xl bg-indigo-600 px-4 py-2.5 font-medium text-white shadow-sm transition hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:ring-offset-zinc-900"
+            className="btn-aurora rounded-xl px-4 py-2.5 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 dark:ring-offset-[#0d0d18]"
           >
             {confirmLabel}
           </button>

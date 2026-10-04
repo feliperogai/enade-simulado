@@ -22,16 +22,16 @@ export function QuestionImage({ question }: { question: Question }) {
     return (
       <div
         role="alert"
-        className="grid place-items-center gap-3 rounded-xl border border-dashed border-zinc-300 bg-white px-6 py-16 text-center dark:border-zinc-700 dark:bg-zinc-900"
+        className="glass grid place-items-center gap-3 rounded-2xl border-dashed px-6 py-16 text-center"
       >
-        <p className="text-zinc-600 dark:text-zinc-400">Não foi possível carregar a imagem desta questão.</p>
+        <p className="text-slate-600 dark:text-slate-400">Não foi possível carregar a imagem desta questão.</p>
         <button
           type="button"
           onClick={() => {
             setFailed(false)
             setRetry(Date.now())
           }}
-          className="inline-flex items-center gap-2 rounded-xl px-4 py-2 font-medium text-indigo-700 ring-1 ring-indigo-200 transition hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-indigo-300 dark:ring-indigo-500/40 dark:hover:bg-indigo-500/10"
+          className="btn-aurora inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
         >
           <RefreshIcon /> Recarregar imagem
         </button>
@@ -45,7 +45,7 @@ export function QuestionImage({ question }: { question: Question }) {
         type="button"
         onClick={() => setZoomed(true)}
         aria-label={`Ampliar questão ${question.n}`}
-        className="group relative block max-w-full cursor-zoom-in overflow-hidden rounded-xl bg-white ring-1 ring-zinc-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:ring-zinc-800"
+        className="group relative block max-w-full cursor-zoom-in overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:shadow-black/40 dark:ring-white/10"
         style={{ width: question.width * DISPLAY_SCALE }}
       >
         <img
@@ -57,13 +57,13 @@ export function QuestionImage({ question }: { question: Question }) {
           onError={() => setFailed(true)}
           className="block h-auto w-full"
         />
-        <span className="pointer-events-none absolute right-2 top-2 grid size-9 place-items-center rounded-full bg-zinc-900/70 text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+        <span className="pointer-events-none absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-slate-900/75 text-white opacity-0 shadow-lg backdrop-blur transition group-hover:opacity-100 group-focus-visible:opacity-100">
           <ZoomIcon />
         </span>
       </button>
 
       <Modal open={zoomed} onClose={() => setZoomed(false)} label={`Questão ${question.n} ampliada`} className="m-0 h-dvh max-h-none w-screen max-w-none">
-        <div className="flex h-full flex-col bg-zinc-950/95">
+        <div className="flex h-full flex-col bg-ink/95 backdrop-blur">
           <div className="flex items-center justify-between px-4 py-3 text-white">
             <span className="font-medium">Questão {question.n}</span>
             <button

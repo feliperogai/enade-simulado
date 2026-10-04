@@ -1,15 +1,17 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router'
 import { AnswerBar } from '../components/AnswerBar'
+import { CourseIcon } from '../components/course'
 import { ArrowLeftIcon, ArrowRightIcon, GridIcon } from '../components/icons'
 import { ConfirmDialog, Modal } from '../components/Modal'
-import { QuestionGrid } from '../components/QuestionGrid'
+import { GridLegend, QuestionGrid } from '../components/QuestionGrid'
 import { QuestionImage } from '../components/QuestionImage'
+import { courseKey } from '../lib/courses'
 import { imageUrl } from '../lib/data'
 import { keyToAction } from '../lib/keys'
 import { blankNumbers, resolveQuestionIndex } from '../lib/nav'
 import { score } from '../lib/score'
-import { SECTION_LABEL, type ExamVersion, type ExamsData } from '../lib/types'
+import { SECTION_LABEL, type Answers, type ExamVersion, type ExamsData, type Question, type Section } from '../lib/types'
 import { useAttempt } from '../lib/useAttempt'
 
 export function Exam({ data }: { data: ExamsData }) {
@@ -25,7 +27,7 @@ function blankMessage(blanks: number[]): string {
 }
 
 const navButton =
-  'inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 rounded-xl px-2 text-sm font-medium sm:px-4 sm:text-base lg:w-auto text-zinc-700 ring-1 ring-zinc-200 transition hover:bg-zinc-100 disabled:pointer-events-none disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-zinc-200 dark:ring-zinc-700 dark:hover:bg-zinc-800'
+  'inline-flex h-11 w-full min-w-0 items-center justify-center gap-1.5 rounded-xl px-2 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 transition hover:bg-slate-900/5 disabled:pointer-events-none disabled:opacity-35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 sm:px-4 lg:w-auto dark:text-slate-200 dark:ring-white/10 dark:hover:bg-white/[0.07]'
 
 function ExamView({ version }: { version: ExamVersion }) {
   const navigate = useNavigate()
@@ -54,7 +56,7 @@ function ExamView({ version }: { version: ExamVersion }) {
   }, [qParam, question.n, setParams])
 
   useEffect(() => {
-    window.scrollTo({ top: 0 })
+    window.scrollTo({ top: 0, behavior: 'instant' })
     const next = questions[index + 1]
     if (next) new Image().src = imageUrl(next) // pré-carrega a próxima
   }, [index, questions])
@@ -96,30 +98,31 @@ function ExamView({ version }: { version: ExamVersion }) {
   }, [questions, goTo, setAnswer, latest])
 
   const blanks = blankNumbers(questions, attempt.answers)
-  const progress = Math.round((answered / questions.length) * 100)
+  const backTo = `/?curso=${courseKey(version.course)}`
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-48 lg:pb-16">
+    <div className="mx-auto max-w-6xl px-4 pb-10">
       {/* Barra da prova */}
-      <div className="sticky top-16 z-20 -mx-4 border-b border-zinc-200/80 bg-zinc-50/90 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
+      <div className="glass sticky top-[4.5rem] z-20 mt-4 rounded-2xl px-3 py-3 sm:px-4">
         <div className="flex items-center gap-3">
           <Link
-            to={`/?ano=${version.year}`}
+            to={backTo}
             aria-label="Voltar para a escolha de provas"
-            className="grid size-10 shrink-0 place-items-center rounded-full text-lg text-zinc-600 transition hover:bg-zinc-200/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 dark:text-zinc-300 dark:hover:bg-zinc-800"
+            className="grid size-10 shrink-0 place-items-center rounded-xl text-lg text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
           >
             <ArrowLeftIcon />
           </Link>
+          <CourseIcon course={version.course} className="hidden size-10 text-xl sm:grid" />
           <div className="min-w-0 flex-1">
-            <p className="truncate font-semibold leading-tight">{version.course}</p>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            <p className="truncate font-display font-semibold leading-tight">{version.course}</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               ENADE {version.year} · {answered} de {questions.length} respondidas
             </p>
           </div>
           {review ? (
             <Link
               to={`/prova/${version.id}/resultado`}
-              className="shrink-0 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:ring-offset-zinc-950"
+              className="shrink-0 rounded-xl bg-linear-to-r from-emerald-500 to-teal-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
             >
               Ver resultado
             </Link>
@@ -127,45 +130,43 @@ function ExamView({ version }: { version: ExamVersion }) {
             <button
               type="button"
               onClick={() => setConfirming(true)}
-              className="shrink-0 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:ring-offset-zinc-950"
+              className="btn-aurora shrink-0 rounded-xl px-4 py-2.5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
             >
               Finalizar
             </button>
           )}
         </div>
-        <div
-          role="progressbar"
-          aria-label="Questões respondidas"
-          aria-valuemin={0}
-          aria-valuemax={questions.length}
-          aria-valuenow={answered}
-          className="mt-3 h-1.5 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800"
-        >
-          <div className="h-full rounded-full bg-indigo-500 transition-all" style={{ width: `${progress}%` }} />
-        </div>
+        <SectionProgress questions={questions} answers={attempt.answers} />
       </div>
 
-      <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_15rem] lg:gap-10">
+      <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-8">
         <section aria-labelledby="questao-titulo" className="min-w-0">
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <h1 id="questao-titulo" className="text-xl font-bold tracking-tight">
+            <h1 id="questao-titulo" className="font-display text-2xl font-bold tracking-tight">
               Questão {question.n}
             </h1>
-            <span className="text-sm text-zinc-500 dark:text-zinc-400">· {SECTION_LABEL[question.section]}</span>
+            <span className="glass rounded-full px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300">
+              {SECTION_LABEL[question.section]}
+            </span>
+            <span className="text-xs text-slate-500 dark:text-slate-400">
+              {index + 1} de {questions.length}
+            </span>
             {review && question.answer === null && (
-              <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-800 dark:bg-amber-500/15 dark:text-amber-300">
+              <span className="rounded-full bg-linear-to-r from-amber-400 to-orange-500 px-2.5 py-1 text-xs font-semibold text-white">
                 Anulada
               </span>
             )}
           </div>
 
-          <QuestionImage question={question} />
+          <div className="glass w-fit max-w-full rounded-3xl p-2 sm:p-3">
+            <QuestionImage question={question} />
+          </div>
 
-          {/* Resposta: fixa embaixo no celular, logo após a questão no desktop */}
-          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-zinc-200 bg-zinc-50/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur lg:static lg:mt-6 lg:border-0 lg:bg-transparent lg:p-0 dark:border-zinc-800 dark:bg-zinc-950/95 lg:dark:bg-transparent">
-            <div className="mx-auto max-w-5xl space-y-3">
+          {/* Dock de resposta: acompanha a rolagem e fica sempre à mão */}
+          <div className="sticky bottom-3 z-20 mt-5 rounded-2xl border border-slate-900/[0.08] bg-white/85 p-3 shadow-2xl shadow-slate-900/15 backdrop-blur-xl dark:border-white/10 dark:bg-[#0d0d18]/85 dark:shadow-black/50">
+            <div className="space-y-3">
               {review && (
-                <p className="text-center text-sm text-zinc-600 lg:text-left dark:text-zinc-400">
+                <p className="text-center text-sm text-slate-600 dark:text-slate-300">
                   {question.answer === null
                     ? `Questão anulada · sua resposta: ${attempt.answers[question.n] ?? '—'}`
                     : `Sua resposta: ${attempt.answers[question.n] ?? '—'} · Gabarito: ${question.answer}`}
@@ -192,16 +193,22 @@ function ExamView({ version }: { version: ExamVersion }) {
                   Próxima <ArrowRightIcon />
                 </button>
               </div>
-              <p className="hidden text-xs text-zinc-500 lg:block dark:text-zinc-500">
-                Atalhos: A–E marcam · ← → navegam · Backspace limpa
-              </p>
             </div>
           </div>
+          <p className="mt-3 hidden text-center text-xs text-slate-500 lg:block dark:text-slate-500">
+            Atalhos: <Kbd>A</Kbd>–<Kbd>E</Kbd> marcam · <Kbd>←</Kbd> <Kbd>→</Kbd> navegam · <Kbd>Backspace</Kbd> limpa
+          </p>
         </section>
 
         <aside className="hidden lg:block" aria-label="Navegação entre questões">
-          <div className="sticky top-40">
-            <p className="mb-3 text-sm font-medium text-zinc-500 dark:text-zinc-400">Questões</p>
+          <div className="glass sticky top-44 space-y-4 rounded-3xl p-5">
+            <div className="flex items-baseline justify-between">
+              <p className="font-display font-semibold">Mapa da prova</p>
+              <p className="text-xs tabular-nums text-slate-500 dark:text-slate-400">
+                {answered}/{questions.length}
+              </p>
+            </div>
+            <GridLegend review={review} />
             <QuestionGrid
               questions={questions}
               answers={attempt.answers}
@@ -213,26 +220,31 @@ function ExamView({ version }: { version: ExamVersion }) {
         </aside>
       </div>
 
-      <Modal
-        open={gridOpen}
-        onClose={() => setGridOpen(false)}
-        label="Questões"
-        className="mb-0 mt-auto w-full max-w-none"
-      >
-        <div className="rounded-t-2xl bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-xl dark:bg-zinc-900">
+      <Modal open={gridOpen} onClose={() => setGridOpen(false)} label="Questões" className="mb-0 mt-auto w-full max-w-none">
+        <div className="rounded-t-3xl border-t border-slate-900/10 bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-2xl dark:border-white/10 dark:bg-[#0d0d18]">
+          <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-slate-300 dark:bg-white/15" aria-hidden="true" />
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-semibold">Questões · {answered}/{questions.length} respondidas</h2>
-            <button type="button" onClick={() => setGridOpen(false)} className="rounded-lg px-3 py-1.5 text-sm font-medium text-indigo-600 dark:text-indigo-400">
+            <h2 className="font-display font-semibold">
+              Mapa da prova · {answered}/{questions.length}
+            </h2>
+            <button
+              type="button"
+              onClick={() => setGridOpen(false)}
+              className="rounded-lg px-3 py-1.5 text-sm font-semibold text-violet-700 dark:text-violet-300"
+            >
               Fechar
             </button>
           </div>
-          <QuestionGrid
-            questions={questions}
-            answers={attempt.answers}
-            currentIndex={index}
-            onSelect={goTo}
-            statuses={statuses}
-          />
+          <div className="space-y-4">
+            <GridLegend review={review} />
+            <QuestionGrid
+              questions={questions}
+              answers={attempt.answers}
+              currentIndex={index}
+              onSelect={goTo}
+              statuses={statuses}
+            />
+          </div>
         </div>
       </Modal>
 
@@ -250,6 +262,54 @@ function ExamView({ version }: { version: ExamVersion }) {
       >
         <p>{blankMessage(blanks)}</p>
       </ConfirmDialog>
+    </div>
+  )
+}
+
+function Kbd({ children }: { children: ReactNode }) {
+  return (
+    <kbd className="rounded-md border border-slate-900/10 bg-slate-900/[0.04] px-1.5 py-0.5 font-sans text-[11px] font-semibold text-slate-600 dark:border-white/10 dark:bg-white/[0.06] dark:text-slate-300">
+      {children}
+    </kbd>
+  )
+}
+
+/** Progresso em dois trechos, proporcionais ao número de questões de cada seção. */
+function SectionProgress({ questions, answers }: { questions: Question[]; answers: Answers }) {
+  const parts = (['FG', 'CE'] as Section[])
+    .map((section) => {
+      const ofSection = questions.filter((q) => q.section === section)
+      return { section, total: ofSection.length, done: ofSection.filter((q) => answers[q.n] !== undefined).length }
+    })
+    .filter((p) => p.total > 0)
+  const answered = parts.reduce((sum, p) => sum + p.done, 0)
+
+  return (
+    <div
+      role="progressbar"
+      aria-label="Questões respondidas"
+      aria-valuemin={0}
+      aria-valuemax={questions.length}
+      aria-valuenow={answered}
+      className="mt-3"
+    >
+      <div className="flex gap-1.5">
+        {parts.map((p) => (
+          <div key={p.section} className="h-1.5 overflow-hidden rounded-full bg-violet-500/15" style={{ flexGrow: p.total }}>
+            <div
+              className="h-full rounded-full bg-linear-to-r from-violet-500 to-cyan-400 transition-all duration-500"
+              style={{ width: `${(p.done / p.total) * 100}%` }}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="mt-1.5 flex gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+        {parts.map((p) => (
+          <span key={p.section} style={{ flexGrow: p.total }} className="min-w-0 truncate">
+            {SECTION_LABEL[p.section]} <span className="tabular-nums">{p.done}/{p.total}</span>
+          </span>
+        ))}
+      </div>
     </div>
   )
 }

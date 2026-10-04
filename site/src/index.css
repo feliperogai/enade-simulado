@@ -1,14 +1,18 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/space-grotesk";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #07070e;
 }
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -16,5 +20,47 @@ html.dark {
 }
 
 body {
-  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-ink dark:text-slate-100;
+}
+
+::selection {
+  @apply bg-violet-500/30;
+}
+
+/* Cartão de vidro: base de todas as superfícies */
+@utility glass {
+  @apply border border-slate-900/[0.07] bg-white/70 shadow-[0_1px_2px_rgb(15_23_42/0.04),0_8px_24px_-12px_rgb(15_23_42/0.12)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.035] dark:shadow-[inset_0_1px_0_rgb(255_255_255/0.04)];
+}
+
+/* Texto em degradê da marca */
+@utility text-aurora {
+  @apply bg-linear-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent dark:from-violet-300 dark:via-indigo-300 dark:to-cyan-300;
+}
+
+/* Botão principal com degradê */
+@utility btn-aurora {
+  @apply bg-linear-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-600/25 transition hover:brightness-110 active:scale-[0.98] dark:from-violet-500 dark:to-indigo-500 dark:shadow-violet-500/20;
+}
+
+/* Grade sutil do fundo, que some nas bordas */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(100 116 139 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(100 116 139 / 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 75%);
+}
+
+@keyframes aurora-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(4%, 3%, 0) scale(1.08); }
+}
+
+.aurora-blob {
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .aurora-blob { animation: none; }
 }
