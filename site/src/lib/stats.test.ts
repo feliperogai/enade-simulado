@@ -15,7 +15,7 @@ const versions = [version('a', 2017), version('b', 2019), version('c', 2021), ve
 describe('summarize', () => {
   it('sem tentativas', () => {
     expect(summarize(versions, () => ({ answers: {} }))).toEqual({
-      finished: 0, inProgress: 0, average: null, best: null, resume: null,
+      finished: 0, inProgress: 0, average: null, best: null, resume: null, resumeQuestion: null,
     })
   })
 
@@ -52,5 +52,22 @@ describe('performanceMessage', () => {
     [0, 'Continue treinando'],
   ])('%i%% → %s', (percent, title) => {
     expect(performanceMessage(percent).title).toBe(title)
+  })
+})
+
+describe('summarize · onde parou', () => {
+  it('usa a última questão vista', () => {
+    const s = summarize(versions, (id): Attempt => (id === 'c' ? { answers: { 1: 'A' }, lastQuestion: 3 } : { answers: {} }))
+    expect(s.resume?.id).toBe('c')
+    expect(s.resumeQuestion).toBe(3)
+  })
+
+  it('sem registro, aponta a primeira em branco', () => {
+    const s = summarize(versions, (id): Attempt => (id === 'c' ? { answers: { 1: 'A', 2: 'B' } } : { answers: {} }))
+    expect(s.resumeQuestion).toBe(3)
+  })
+
+  it('nada em andamento', () => {
+    expect(summarize(versions, () => ({ answers: {} })).resumeQuestion).toBeNull()
   })
 })

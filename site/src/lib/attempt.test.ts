@@ -52,4 +52,12 @@ describe('createAttemptController', () => {
     expect(ctrl.setAnswer(1, 'C').updatedAt).toBe('2026-10-14T08:00:00.000Z')
     expect(store.load('2017-b').updatedAt).toBe('2026-10-14T08:00:00.000Z')
   })
+
+  it('visit registra a questão aberta e ela sobrevive às respostas', () => {
+    const store = createStore(null)
+    const ctrl = createAttemptController(store, version)
+    ctrl.visit(3)
+    expect(store.load('2017-b').lastQuestion).toBe(3)
+    expect(ctrl.setAnswer(1, 'A').lastQuestion).toBe(3)
+  })
 })

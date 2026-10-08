@@ -10,12 +10,14 @@ export interface Summary {
   best: { id: string; percent: number } | null
   /** prova em andamento mexida por último */
   resume: ExamVersion | null
+  /** questão onde parou nessa prova */
+  resumeQuestion: number | null
 }
 
 export function summarize(versions: ExamVersion[], load: (id: string) => Attempt): Summary {
   const percents: { id: string; percent: number }[] = []
   let inProgress = 0
-  let resume: { version: ExamVersion; at: string } | null = null
+  let resume: { version: ExamVersion; at: string; question: number } | null = null
 
   for (const version of versions) {
     const attempt = load(version.id)
@@ -28,7 +30,9 @@ export function summarize(versions: ExamVersion[], load: (id: string) => Attempt
     if (!answered) continue
     inProgress++
     const at = attempt.updatedAt ?? ''
-    if (!resume || at > resume.at) resume = { version, at }
+    const firstBlank = version.questions.find((q) => attempt.answers[q.n] === undefined)?.n
+    const question = attempt.lastQuestion ?? firstBlank ?? version.questions[0].n
+    if (!resume || at > resume.at) resume = { version, at, question }
   }
 
   const best = percents.reduce<Summary['best']>((b, p) => (!b || p.percent > b.percent ? p : b), null)
@@ -36,7 +40,14 @@ export function summarize(versions: ExamVersion[], load: (id: string) => Attempt
     ? Math.round(percents.reduce((sum, p) => sum + p.percent, 0) / percents.length)
     : null
 
-  return { finished: percents.length, inProgress, average, best, resume: resume?.version ?? null }
+  return {
+    finished: percents.length,
+    inProgress,
+    average,
+    best,
+    resume: resume?.version ?? null,
+    resumeQuestion: resume?.question ?? null,
+  }
 }
 
 export function performanceMessage(percent: number): { title: string; subtitle: string } {

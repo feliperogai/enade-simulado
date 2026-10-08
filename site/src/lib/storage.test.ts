@@ -81,4 +81,15 @@ describe('storage', () => {
     kv.data.set('enade:v1:2017-b', JSON.stringify({ answers: {}, updatedAt: 42 }))
     expect(store.load('2017-b')).toEqual({ answers: {} })
   })
+
+  it('guarda a última questão vista e descarta valores inválidos', () => {
+    const kv = memoryKV()
+    const store = createStore(kv)
+    store.save('2017-b', { answers: {}, lastQuestion: 12 })
+    expect(store.load('2017-b')).toEqual({ answers: {}, lastQuestion: 12 })
+    for (const bad of [0, -3, 1.5, 'x']) {
+      kv.data.set('enade:v1:2017-b', JSON.stringify({ answers: {}, lastQuestion: bad }))
+      expect(store.load('2017-b')).toEqual({ answers: {} })
+    }
+  })
 })

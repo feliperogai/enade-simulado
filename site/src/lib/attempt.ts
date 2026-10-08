@@ -4,6 +4,8 @@ import type { Answers, ExamVersion, Letter } from './types'
 export interface AttemptController {
   get(): Attempt
   setAnswer(n: number, letter: Letter | null): Attempt
+  /** registra a questão aberta (para "você parou na questão N") */
+  visit(n: number): Attempt
   finish(now?: Date): Attempt
   reset(): Attempt
 }
@@ -43,6 +45,7 @@ export function createAttemptController(
       else delete answers[n]
       return commit({ ...current, answers })
     },
+    visit: (n) => (current.lastQuestion === n ? current : commit({ ...current, lastQuestion: n })),
     finish: (now = clock()) => commit({ ...current, finishedAt: now.toISOString() }),
     reset() {
       store.clear(version.id)
