@@ -1,13 +1,66 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
-@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/fraunces/full.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/400-italic.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+@import "@fontsource-variable/caveat";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * Folha de prova: papel, tinta preta, caneta azul para marcar, caneta
+ * vermelha para corrigir, marca-texto para destacar. As capas dos cadernos
+ * usam uma cor por curso, como cadernos impressos.
+ */
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --color-ink: #07070e;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-hand: "Caveat Variable", "Segoe Print", cursive;
+
+  --color-paper: #f2ede3;
+  --color-sheet: #fbf8f2;
+  --color-ink: #1d1b18;
+  --color-ink-soft: #57524a;
+  --color-ink-faint: #8f887b;
+  --color-rule: #ddd5c6;
+  --color-pen: #2343c4;
+  --color-redpen: #c33a22;
+  --color-greenpen: #2e7a4f;
+  --color-marker: #ffe55c;
+  --color-postit: #ffe98a;
+  --color-shelf: #c8b48f;
+
+  --color-cc: #2e5f7f;
+  --color-ec: #b65733;
+  --color-si: #b98a22;
+  --color-lic: #5f7b3c;
+}
+
+/* Modo noturno: papel escuro e quente, tintas mais claras */
+.dark {
+  --color-paper: #171613;
+  --color-sheet: #211f1b;
+  --color-ink: #ece5d6;
+  --color-ink-soft: #b7ae9e;
+  --color-ink-faint: #827a6c;
+  --color-rule: #3a3731;
+  --color-pen: #8ea2ff;
+  --color-redpen: #ff846a;
+  --color-greenpen: #6fcf97;
+  --color-marker: #6b5c16;
+  --color-postit: #e6cf6a;
+  --color-shelf: #4a4031;
+
+  --color-cc: #5b95bb;
+  --color-ec: #d97b52;
+  --color-si: #d8ab48;
+  --color-lic: #8aaa5d;
 }
 
 html {
@@ -20,47 +73,156 @@ html.dark {
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased dark:bg-ink dark:text-slate-100;
+  @apply bg-paper font-sans text-ink antialiased;
+}
+
+/* Grão de papel por cima de tudo, bem leve */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.28 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.dark body::before {
+  mix-blend-mode: screen;
+  opacity: 0.12;
 }
 
 ::selection {
-  @apply bg-violet-500/30;
+  background: var(--color-marker);
+  color: var(--color-ink);
 }
 
-/* Cartão de vidro: base de todas as superfícies */
-@utility glass {
-  @apply border border-slate-900/[0.07] bg-white/70 shadow-[0_1px_2px_rgb(15_23_42/0.04),0_8px_24px_-12px_rgb(15_23_42/0.12)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-white/[0.035] dark:shadow-[inset_0_1px_0_rgb(255_255_255/0.04)];
+.font-serif {
+  font-variation-settings: "SOFT" 50, "WONK" 0;
 }
 
-/* Texto em degradê da marca */
-@utility text-aurora {
-  @apply bg-linear-to-r from-violet-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent dark:from-violet-300 dark:via-indigo-300 dark:to-cyan-300;
+/* Folha: superfície de papel com sombra de papel sobre a mesa */
+@utility sheet {
+  background-color: var(--color-sheet);
+  border: 1px solid var(--color-rule);
+  box-shadow:
+    0 1px 0 rgb(120 100 70 / 0.06),
+    0 14px 28px -20px rgb(80 60 30 / 0.35);
 }
 
-/* Botão principal com degradê */
-@utility btn-aurora {
-  @apply bg-linear-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-600/25 transition hover:brightness-110 active:scale-[0.98] dark:from-violet-500 dark:to-indigo-500 dark:shadow-violet-500/20;
+/* Marca-texto: faixa irregular atrás do texto */
+@utility marker {
+  background-image: linear-gradient(
+    100deg,
+    transparent 0.25em,
+    color-mix(in srgb, var(--color-marker) 85%, transparent) 0.35em,
+    var(--color-marker) 50%,
+    color-mix(in srgb, var(--color-marker) 80%, transparent) 97%,
+    transparent
+  );
+  background-size: 100% 0.62em;
+  background-position: 0 88%;
+  background-repeat: no-repeat;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-inline: 0.12em;
 }
 
-/* Grade sutil do fundo, que some nas bordas */
-@utility bg-grid {
-  background-image:
-    linear-gradient(to right, rgb(100 116 139 / 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(100 116 139 / 0.08) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 75%);
+/* Régua dupla de cabeçalho de prova */
+@utility rule-double {
+  border-bottom: 3px double var(--color-ink);
 }
 
-@keyframes aurora-drift {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(4%, 3%, 0) scale(1.08); }
+/* Linha vermelha de margem, como folha de caderno */
+@utility margin-line {
+  background-image: linear-gradient(
+    to right,
+    transparent 2.25rem,
+    color-mix(in srgb, var(--color-redpen) 55%, transparent) 2.25rem,
+    color-mix(in srgb, var(--color-redpen) 55%, transparent) calc(2.25rem + 1.5px),
+    transparent calc(2.25rem + 1.5px)
+  );
 }
 
-.aurora-blob {
-  animation: aurora-drift 18s ease-in-out infinite;
+/* Folha pautada */
+@utility ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(2rem - 1px),
+    var(--color-rule) calc(2rem - 1px),
+    var(--color-rule) 2rem
+  );
+}
+
+/* Botão de caneta: recorte de papel com sombra deslocada */
+@utility btn-pen {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-pen px-4 py-2.5 font-mono text-sm font-semibold uppercase tracking-wider text-sheet transition-[transform,box-shadow] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pen focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 0 var(--color-ink);
+  }
+}
+
+/* Botão secundário: mesma forma, sem tinta */
+@utility btn-paper {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-ink bg-sheet px-4 py-2.5 font-mono text-sm font-semibold uppercase tracking-wider text-ink transition-[transform,box-shadow] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pen focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+
+  &:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 0 var(--color-ink);
+  }
+}
+
+/* Traço desenhado à mão: o caminho usa pathLength="1" */
+@keyframes draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+.draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.7s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* Carimbo batendo no papel */
+@keyframes stamp-in {
+  0% { opacity: 0; transform: scale(1.8) rotate(var(--stamp-rotate, -8deg)); }
+  55% { opacity: 1; transform: scale(0.94) rotate(var(--stamp-rotate, -8deg)); }
+  100% { opacity: 1; transform: scale(1) rotate(var(--stamp-rotate, -8deg)); }
+}
+
+.stamp-in {
+  animation: stamp-in 0.45s cubic-bezier(0.3, 1.4, 0.6, 1) both;
+}
+
+/* Tinta preenchendo a bolinha */
+@keyframes ink {
+  from { transform: scale(0.35); opacity: 0.4; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.ink {
+  animation: ink 0.22s ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .aurora-blob { animation: none; }
+  .draw { animation: none; stroke-dashoffset: 0; }
+  .stamp-in, .ink { animation: none; }
 }

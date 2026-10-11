@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07070e" />
+    <meta name="theme-color" content="#f2ede3" />
     <meta name="description" content="Resolva as provas objetivas do ENADE de Computação (2005–2021) e veja sua nota pelo gabarito oficial." />
     <title>Simulador ENADE Computação</title>
     <script>
       // Aplica o tema antes do primeiro desenho para não piscar.
       try {
         var saved = localStorage.getItem('enade:theme')
-        var dark = saved ? saved === 'dark' : true // escuro é o padrão
+        var dark = saved === 'dark' // papel claro é o padrão
         if (dark) document.documentElement.classList.add('dark')
       } catch (e) {}
     </script>

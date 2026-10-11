@@ -2,74 +2,61 @@ import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import { store } from '../lib/storage'
 import { useTheme } from '../lib/theme'
-import { LogoMark, MoonIcon, SunIcon } from './icons'
+import { MoonIcon, SunIcon } from './icons'
 
 export function ThemeToggle() {
   const { theme, toggle } = useTheme()
+  const night = theme === 'dark'
   return (
     <button
       type="button"
       onClick={toggle}
       aria-label="Alternar tema claro/escuro"
-      title={theme === 'dark' ? 'Usar tema claro' : 'Usar tema escuro'}
-      className="glass grid size-10 place-items-center rounded-full text-lg text-slate-600 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:text-slate-300 dark:hover:text-white"
+      className="inline-flex items-center gap-1.5 rounded-md border-[1.5px] border-ink/70 px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-soft transition hover:border-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pen"
     >
-      {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+      {night ? <SunIcon /> : <MoonIcon />}
+      {night ? 'Dia' : 'Noite'}
     </button>
   )
 }
 
-/** Fundo fixo: manchas de luz em movimento lento + grade que some nas bordas. */
-function AuroraBackground() {
+/** Marca: uma bolinha do cartão-resposta já marcada de caneta. */
+export function Brand() {
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div className="aurora-blob absolute -top-48 left-[8%] h-[34rem] w-[34rem] rounded-full bg-violet-400/25 blur-[110px] dark:bg-violet-600/25" />
-      <div
-        className="aurora-blob absolute -top-32 right-[2%] h-[30rem] w-[30rem] rounded-full bg-cyan-300/25 blur-[110px] dark:bg-cyan-500/15"
-        style={{ animationDelay: '-6s' }}
-      />
-      <div
-        className="aurora-blob absolute top-[45%] left-[35%] h-[26rem] w-[26rem] rounded-full bg-indigo-300/20 blur-[120px] dark:bg-indigo-600/15"
-        style={{ animationDelay: '-12s' }}
-      />
-      <div className="bg-grid absolute inset-0" />
-    </div>
+    <Link to="/" className="group flex items-center gap-2.5 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pen">
+      <span
+        aria-hidden="true"
+        className="grid size-8 place-items-center rounded-full border-2 border-ink bg-pen font-serif text-[17px] font-semibold italic text-sheet shadow-[2px_2px_0_var(--color-ink)] transition group-hover:-rotate-12"
+      >
+        E
+      </span>
+      <span className="leading-none">
+        <span className="block font-serif text-[19px] font-semibold tracking-tight">Simulado ENADE</span>
+        <span className="mt-0.5 block font-mono text-[9.5px] uppercase tracking-[0.2em] text-ink-faint">Computação · 2005–2021</span>
+      </span>
+    </Link>
   )
 }
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="relative isolate flex min-h-dvh flex-col">
-      <AuroraBackground />
-
-      <header className="sticky top-0 z-30 border-b border-slate-900/[0.06] bg-slate-50/70 backdrop-blur-xl dark:border-white/[0.06] dark:bg-ink/60">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <Link
-            to="/"
-            className="group flex items-center gap-3 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
-          >
-            <LogoMark className="size-9 drop-shadow-[0_4px_16px_rgb(139_92_246/0.45)] transition group-hover:scale-105" />
-            <span className="leading-tight">
-              <span className="block font-display text-[17px] font-bold tracking-tight">Simulador ENADE</span>
-              <span className="block text-xs font-medium text-slate-500 dark:text-slate-400">Computação · 2005 a 2021</span>
-            </span>
-          </Link>
+    <div className="flex min-h-dvh flex-col">
+      <header className="rule-double sticky top-0 z-30 bg-paper/95 backdrop-blur-sm">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
+          <Brand />
           <ThemeToggle />
         </div>
       </header>
 
       <main className="flex-1">{children}</main>
 
-      <footer className="border-t border-slate-900/[0.06] dark:border-white/[0.06]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between dark:text-slate-400">
-          <p>Provas e gabaritos oficiais do INEP.</p>
-          {store.persistent ? (
-            <p>Seu progresso fica salvo neste navegador.</p>
-          ) : (
-            <p className="text-amber-700 dark:text-amber-400">
-              Seu navegador não permite salvar o progresso: as respostas ficam só nesta aba.
-            </p>
-          )}
+      <footer className="border-t-2 border-ink">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+            Provas e gabaritos oficiais do INEP ·{' '}
+            {store.persistent ? 'progresso salvo neste navegador' : 'este navegador não salva o progresso'}
+          </p>
+          <p className="font-hand text-2xl leading-none text-pen">bons estudos!</p>
         </div>
       </footer>
     </div>

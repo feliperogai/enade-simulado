@@ -22,16 +22,16 @@ export function QuestionImage({ question }: { question: Question }) {
     return (
       <div
         role="alert"
-        className="glass grid place-items-center gap-3 rounded-2xl border-dashed px-6 py-16 text-center"
+        className="sheet grid place-items-center gap-3 rounded-md border-dashed px-6 py-16 text-center"
       >
-        <p className="text-slate-600 dark:text-slate-400">Não foi possível carregar a imagem desta questão.</p>
+        <p className="text-ink-soft">Não foi possível carregar a imagem desta questão.</p>
         <button
           type="button"
           onClick={() => {
             setFailed(false)
             setRetry(Date.now())
           }}
-          className="btn-aurora inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+          className="btn-pen"
         >
           <RefreshIcon /> Recarregar imagem
         </button>
@@ -45,7 +45,7 @@ export function QuestionImage({ question }: { question: Question }) {
         type="button"
         onClick={() => setZoomed(true)}
         aria-label={`Ampliar questão ${question.n}`}
-        className="group relative block max-w-full cursor-zoom-in overflow-hidden rounded-2xl bg-white shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:shadow-black/40 dark:ring-white/10"
+        className="group relative block max-w-full cursor-zoom-in bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pen focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
         style={{ width: question.width * DISPLAY_SCALE }}
       >
         <img
@@ -57,19 +57,19 @@ export function QuestionImage({ question }: { question: Question }) {
           onError={() => setFailed(true)}
           className="block h-auto w-full"
         />
-        <span className="pointer-events-none absolute right-3 top-3 grid size-9 place-items-center rounded-full bg-slate-900/75 text-white opacity-0 shadow-lg backdrop-blur transition group-hover:opacity-100 group-focus-visible:opacity-100">
-          <ZoomIcon />
+        <span className="pointer-events-none absolute right-2 top-2 inline-flex items-center gap-1 rounded-md border-2 border-ink bg-sheet px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink opacity-0 shadow-[2px_2px_0_var(--color-ink)] transition group-hover:opacity-100 group-focus-visible:opacity-100">
+          <ZoomIcon /> ampliar
         </span>
       </button>
 
       <Modal open={zoomed} onClose={() => setZoomed(false)} label={`Questão ${question.n} ampliada`} className="m-0 h-dvh max-h-none w-screen max-w-none">
-        <div className="flex h-full flex-col bg-ink/95 backdrop-blur">
+        <div className="flex h-full flex-col bg-[#1d1b18]/95">
           <div className="flex items-center justify-between px-4 py-3 text-white">
-            <span className="font-medium">Questão {question.n}</span>
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.18em]">Questão {question.n}</span>
             <button
               type="button"
               onClick={() => setZoomed(false)}
-              className="inline-flex items-center gap-2 rounded-xl px-3 py-2 font-medium ring-1 ring-white/30 transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-white/70 px-3 py-1.5 font-mono text-xs font-semibold uppercase tracking-wider transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <XIcon /> Fechar
             </button>
@@ -80,7 +80,7 @@ export function QuestionImage({ question }: { question: Question }) {
               width={question.width}
               height={question.height}
               alt={`Questão ${question.n} em tamanho ampliado`}
-              className="mx-auto block max-w-none rounded-lg bg-white"
+              className="mx-auto block max-w-none bg-white shadow-2xl"
             />
           </div>
         </div>

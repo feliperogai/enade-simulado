@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
 import { store, type Theme } from './storage'
 
-/** Tema salvo ou escuro (o padrão do visual); só grava quando a pessoa alterna. */
+/** Tema salvo ou papel claro (o padrão do visual); só grava quando a pessoa alterna. */
 export function useTheme(): { theme: Theme; toggle: () => void } {
-  const [theme, setTheme] = useState<Theme>(() => store.loadTheme() ?? 'dark')
+  const [theme, setTheme] = useState<Theme>(() => store.loadTheme() ?? 'light')
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')

@@ -1,11 +1,11 @@
-import { useState, type ReactNode } from 'react'
+import { useState } from 'react'
 import { Link, Navigate, useNavigate, useParams } from 'react-router'
-import { CourseIcon } from '../components/course'
-import { ArrowRightIcon, BanIcon, CheckIcon, ListIcon, MinusIcon, RefreshIcon, XIcon } from '../components/icons'
+import { AnswerSheet } from '../components/AnswerSheet'
+import { RefreshIcon } from '../components/icons'
 import { ConfirmDialog } from '../components/Modal'
-import { GridLegend, QuestionGrid } from '../components/QuestionGrid'
+import { HandCheck, HandCircle, HandCross, Kicker, Stamp } from '../components/paper'
 import { courseKey } from '../lib/courses'
-import { score, type QuestionResult, type QuestionStatus, type SectionScore } from '../lib/score'
+import { score, type QuestionResult, type QuestionStatus } from '../lib/score'
 import { performanceMessage } from '../lib/stats'
 import { SECTION_LABEL, type ExamVersion, type ExamsData, type Section } from '../lib/types'
 import { useAttempt } from '../lib/useAttempt'
@@ -17,261 +17,172 @@ export function Result({ data }: { data: ExamsData }) {
   return <ResultView key={version.id} version={version} />
 }
 
-const STATUS: Record<QuestionStatus, { label: string; icon: ReactNode; mark: string }> = {
-  correct: { label: 'Acerto', icon: <CheckIcon />, mark: 'bg-linear-to-br from-emerald-500 to-teal-600 text-white' },
-  wrong: { label: 'Erro', icon: <XIcon />, mark: 'bg-linear-to-br from-rose-500 to-pink-600 text-white' },
-  blank: { label: 'Em branco', icon: <MinusIcon />, mark: 'bg-slate-300 text-slate-700 dark:bg-white/10 dark:text-slate-200' },
-  annulled: { label: 'Anulada', icon: <BanIcon />, mark: 'bg-linear-to-br from-amber-400 to-orange-500 text-white' },
+const STROKE: Record<QuestionStatus, string> = {
+  correct: 'bg-greenpen',
+  wrong: 'bg-redpen',
+  blank: 'bg-rule',
+  annulled: 'bg-ink-faint/40',
 }
 
-type Filter = 'all' | 'wrong' | 'blank'
-const FILTERS: { id: Filter; label: string }[] = [
-  { id: 'all', label: 'Todas' },
-  { id: 'wrong', label: 'Erros' },
-  { id: 'blank', label: 'Em branco' },
-]
-
-/** Medidor circular do aproveitamento, com traço em degradê. */
-function Gauge({ percent }: { percent: number }) {
-  const r = 52
-  const c = 2 * Math.PI * r
-  return (
-    <div
-      role="meter"
-      aria-label={`Aproveitamento de ${percent}%`}
-      aria-valuemin={0}
-      aria-valuemax={100}
-      aria-valuenow={percent}
-      className="relative grid size-44 shrink-0 place-items-center sm:size-48"
-    >
-      <span aria-hidden="true" className="absolute inset-4 rounded-full bg-violet-500/20 blur-2xl" />
-      <svg viewBox="0 0 120 120" className="absolute inset-0 -rotate-90" aria-hidden="true">
-        <defs>
-          <linearGradient id="gauge-g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#8b5cf6" />
-            <stop offset="1" stopColor="#22d3ee" />
-          </linearGradient>
-        </defs>
-        <circle cx="60" cy="60" r={r} fill="none" strokeWidth="10" className="stroke-violet-500/15" />
-        {percent > 0 && (
-          <circle
-            cx="60"
-            cy="60"
-            r={r}
-            fill="none"
-            strokeWidth="10"
-            strokeLinecap="round"
-            stroke="url(#gauge-g)"
-            strokeDasharray={`${(percent / 100) * c} ${c}`}
-          />
-        )}
-      </svg>
-      <div className="relative text-center">
-        <p className="font-display text-5xl font-bold tracking-tight">{percent}%</p>
-        <p className="mt-0.5 text-xs font-medium text-slate-500 dark:text-slate-400">aproveitamento</p>
-      </div>
-    </div>
-  )
-}
-
-function StatTile({ status, label, value }: { status: QuestionStatus; label: string; value: number }) {
-  const s = STATUS[status]
-  return (
-    <div className="glass rounded-2xl p-4">
-      <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-        <span className={`grid size-6 place-items-center rounded-lg text-xs ${s.mark}`}>{s.icon}</span>
-        {label}
-      </div>
-      <p className="mt-2 font-display text-3xl font-bold tracking-tight">{value}</p>
-    </div>
-  )
-}
-
-function SectionMeter({ section, value }: { section: Section; value: SectionScore }) {
-  const pct = value.total === 0 ? 0 : Math.round((value.correct / value.total) * 100)
+/** Uma seção como fileira de riscos, um por questão, na cor do resultado. */
+function SectionStrokes({ section, results }: { section: Section; results: QuestionResult[] }) {
+  const own = results.filter((r) => r.section === section)
+  if (own.length === 0) return null
+  const counted = own.filter((r) => r.status !== 'annulled')
+  const correct = counted.filter((r) => r.status === 'correct').length
   return (
     <div>
-      <div className="flex items-baseline justify-between gap-3 text-sm">
-        <span className="font-medium">{SECTION_LABEL[section]}</span>
-        <span className="tabular-nums text-slate-600 dark:text-slate-400">
-          {value.total === 0 ? '—' : `${value.correct}/${value.total} · ${pct}%`}
-        </span>
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="font-serif text-lg">{SECTION_LABEL[section]}</p>
+        <p className="font-mono text-sm font-semibold tabular-nums">
+          {correct}/{counted.length}
+        </p>
       </div>
       <div
-        role="meter"
-        aria-label={`${SECTION_LABEL[section]}: ${value.correct} de ${value.total} acertos`}
-        aria-valuemin={0}
-        aria-valuemax={value.total}
-        aria-valuenow={value.correct}
-        className="mt-2 h-2.5 overflow-hidden rounded-full bg-violet-500/15"
+        className="mt-2 flex flex-wrap gap-[3px]"
+        role="img"
+        aria-label={`${SECTION_LABEL[section]}: ${correct} de ${counted.length} acertos`}
       >
-        <div className="h-full rounded-full bg-linear-to-r from-violet-500 to-cyan-400" style={{ width: `${pct}%` }} />
+        {own.map((r) => (
+          <span key={r.n} className={`h-6 w-[5px] rounded-full ${STROKE[r.status]}`} />
+        ))}
       </div>
     </div>
-  )
-}
-
-function ResultRow({ r, versionId }: { r: QuestionResult; versionId: string }) {
-  const s = STATUS[r.status]
-  return (
-    <li>
-      <Link
-        to={`/prova/${versionId}?q=${r.n}`}
-        className="group flex items-center gap-3 rounded-xl px-3 py-3 transition hover:bg-slate-900/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:hover:bg-white/[0.05]"
-      >
-        <span className={`grid size-8 shrink-0 place-items-center rounded-lg ${s.mark}`} aria-hidden="true">
-          {s.icon}
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block font-medium">
-            Questão {r.n} <span className="sr-only">· {s.label}</span>
-          </span>
-          <span className="block text-xs text-slate-500 dark:text-slate-400">{SECTION_LABEL[r.section]}</span>
-        </span>
-        <span className="text-right text-sm tabular-nums text-slate-600 dark:text-slate-400">
-          <span className="block">Sua resposta: {r.given ?? '—'}</span>
-          <span className="block">Gabarito: {r.expected ?? 'Anulada'}</span>
-        </span>
-        <ArrowRightIcon className="shrink-0 text-slate-400 transition group-hover:translate-x-0.5" />
-      </Link>
-    </li>
   )
 }
 
 function ResultView({ version }: { version: ExamVersion }) {
   const navigate = useNavigate()
   const { attempt, reset } = useAttempt(version)
-  const [filter, setFilter] = useState<Filter>('wrong')
+  const [onlyMistakes, setOnlyMistakes] = useState(false)
   const [confirming, setConfirming] = useState(false)
 
   if (!attempt.finishedAt) return <Navigate to={`/prova/${version.id}`} replace />
 
   const result = score(version.questions, attempt.answers)
   const message = performanceMessage(result.percent)
-  const statuses = Object.fromEntries(result.perQuestion.map((r) => [r.n, r.status]))
-  const rows = result.perQuestion.filter((r) => filter === 'all' || r.status === filter)
-  const counts: Record<Filter, number> = { all: result.perQuestion.length, wrong: result.wrong, blank: result.blank }
+  const corrected = Object.fromEntries(result.perQuestion.map((r) => [r.n, r.status]))
+  const mistakes = new Set(result.perQuestion.filter((r) => r.status === 'wrong' || r.status === 'blank').map((r) => r.n))
   const backTo = `/?curso=${courseKey(version.course)}`
+  const date = new Date(attempt.finishedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-20 pt-8">
-      <Link to={backTo} className="text-sm font-semibold text-violet-700 hover:underline dark:text-violet-300">
-        ← Escolher outra prova
+    <div className="mx-auto max-w-5xl px-4 pb-24 pt-8">
+      <Link to={backTo} className="font-mono text-[11px] font-semibold uppercase tracking-wider text-ink-soft hover:text-ink">
+        ← Voltar à estante
       </Link>
 
-      {/* Destaque */}
-      <section className="glass relative mt-4 overflow-hidden rounded-3xl p-6 sm:p-8" aria-labelledby="resultado-titulo">
-        <span aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-violet-500/20 blur-3xl" />
-        <span aria-hidden="true" className="pointer-events-none absolute -bottom-28 left-10 size-64 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="relative grid items-center gap-8 sm:grid-cols-[auto_1fr]">
-          <Gauge percent={result.percent} />
+      {/* Folha corrigida */}
+      <section
+        aria-labelledby="nota-titulo"
+        className="sheet margin-line relative mt-4 overflow-hidden rounded-sm py-8 pl-14 pr-6 sm:py-10 sm:pl-[4.5rem] sm:pr-10"
+      >
+        <div className="absolute right-5 top-6 sm:right-10 sm:top-9">
+          <Stamp tone="red" rotate={-11} animate className="!text-sm">
+            Corrigido
+          </Stamp>
+        </div>
+
+        <Kicker>Correção · ENADE {version.year}</Kicker>
+        <p className="mt-1 max-w-[70%] font-serif text-2xl leading-tight sm:text-3xl">{version.course}</p>
+        <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-ink-faint">Entregue em {date}</p>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-14 gap-y-8">
           <div>
-            <p className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-              <CourseIcon course={version.course} className="size-7 text-sm" />
-              ENADE {version.year} · {version.course}
-            </p>
-            <h1 id="resultado-titulo" className="text-aurora mt-3 font-display text-4xl font-bold tracking-tight">
-              {message.title}
+            <h1 id="nota-titulo" className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-faint">
+              Nota
             </h1>
-            <p className="mt-2 text-slate-600 dark:text-slate-300">{message.subtitle}</p>
-            <p className="mt-4 text-lg">
-              <span className="font-display text-2xl font-bold">{result.correct}</span>{' '}
-              <span className="text-slate-500 dark:text-slate-400">de {result.total} acertos</span>
-            </p>
-            <div className="mt-5 space-y-4">
-              <SectionMeter section="FG" value={result.bySection.FG} />
-              <SectionMeter section="CE" value={result.bySection.CE} />
-            </div>
+            <HandCircle delay={350} className="mt-3">
+              <span className="px-2 font-serif text-7xl font-semibold leading-none tracking-tight sm:text-8xl">
+                {result.correct}
+                <span className="text-4xl text-ink-faint sm:text-5xl">/{result.total}</span>
+              </span>
+            </HandCircle>
+            <p className="mt-6 font-mono text-sm font-semibold">{result.percent}% de aproveitamento</p>
           </div>
+
+          <div className="max-w-xs -rotate-2">
+            <p className="font-hand text-[2.6rem] leading-none text-redpen">{message.title}</p>
+            <p className="mt-2 font-hand text-2xl leading-tight text-redpen/85">{message.subtitle}</p>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-8 border-t border-dashed border-rule pt-7 sm:grid-cols-[1fr_auto]">
+          <div className="space-y-5">
+            <SectionStrokes section="FG" results={result.perQuestion} />
+            <SectionStrokes section="CE" results={result.perQuestion} />
+          </div>
+          <ul className="space-y-2 font-mono text-sm sm:border-l sm:border-dashed sm:border-rule sm:pl-8">
+            <li className="flex items-center gap-2.5">
+              <HandCheck /> <b>{result.correct}</b> acertos
+            </li>
+            <li className="flex items-center gap-2.5">
+              <HandCross /> <b>{result.wrong}</b> erros
+            </li>
+            <li className="flex items-center gap-2.5">
+              <span className="grid size-5 place-items-center text-ink-faint">—</span> <b>{result.blank}</b> em branco
+            </li>
+            <li className="flex items-center gap-2.5">
+              <span className="grid size-5 place-items-center text-[10px] font-bold text-ink-faint">⊘</span>{' '}
+              <b>{result.annulled}</b> anuladas
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section aria-label="Resumo" className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatTile status="correct" label="Acertos" value={result.correct} />
-        <StatTile status="wrong" label="Erros" value={result.wrong} />
-        <StatTile status="blank" label="Em branco" value={result.blank} />
-        <StatTile status="annulled" label="Anuladas" value={result.annulled} />
-      </section>
-
-      <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-        <button
-          type="button"
-          onClick={() => setConfirming(true)}
-          className="btn-aurora inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
-        >
+      <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+        <button type="button" onClick={() => setConfirming(true)} className="btn-pen">
           <RefreshIcon /> Refazer prova
         </button>
-        <Link
-          to={backTo}
-          className="glass inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-slate-700 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 dark:text-slate-200 dark:hover:text-white"
-        >
-          Escolher outra prova
+        <Link to={backTo} className="btn-paper">
+          Escolher outro caderno
         </Link>
       </div>
 
-      {/* Mapa de questões */}
-      <section className="glass mt-8 rounded-3xl p-5 sm:p-6" aria-labelledby="mapa-titulo">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="mapa-titulo" className="font-display text-lg font-semibold">
-            Mapa de questões
-          </h2>
-          <GridLegend review />
-        </div>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Toque numa questão para revisar com o gabarito.</p>
-        <div className="mt-5">
-          <QuestionGrid
-            questions={version.questions}
-            answers={attempt.answers}
-            currentIndex={-1}
-            onSelect={(i) => navigate(`/prova/${version.id}?q=${version.questions[i].n}`)}
-            statuses={statuses}
-            columns="grid-cols-7 sm:grid-cols-10 lg:grid-cols-14"
-          />
-        </div>
-      </section>
-
-      {/* Lista detalhada */}
-      <section className="mt-8" aria-labelledby="lista-titulo">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="lista-titulo" className="flex items-center gap-2 font-display text-lg font-semibold">
-            <ListIcon className="text-violet-500 dark:text-violet-300" /> Lista detalhada
-          </h2>
-          <div role="tablist" aria-label="Filtrar questões" className="glass flex gap-1 rounded-full p-1">
-            {FILTERS.map((f) => (
-              <button
-                key={f.id}
-                type="button"
-                role="tab"
-                aria-selected={filter === f.id}
-                onClick={() => setFilter(f.id)}
-                className={`rounded-full px-3 py-1.5 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 ${
-                  filter === f.id
-                    ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900'
-                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
-                }`}
-              >
-                {f.label} <span className="tabular-nums opacity-60">{counts[f.id]}</span>
-              </button>
-            ))}
+      {/* Cartão-resposta corrigido */}
+      <section className="mt-14" aria-labelledby="cartao-titulo">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 id="cartao-titulo" className="font-serif text-3xl font-semibold tracking-tight">
+              Seu cartão-resposta
+            </h2>
+            <p className="mt-1 max-w-xl text-sm text-ink-soft">
+              Em azul, o que você marcou; o círculo vermelho mostra a resposta certa quando você errou. Toque numa
+              questão para revisar.
+            </p>
           </div>
+          <label className="inline-flex cursor-pointer select-none items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider">
+            <input
+              type="checkbox"
+              checked={onlyMistakes}
+              onChange={(e) => setOnlyMistakes(e.target.checked)}
+              className="size-4 accent-redpen"
+            />
+            Só erros e brancos ({mistakes.size})
+          </label>
         </div>
 
-        {rows.length === 0 ? (
-          <p className="glass mt-4 rounded-2xl p-6 text-center text-slate-500 dark:text-slate-400">
-            {filter === 'wrong' ? 'Nenhum erro nesta prova.' : 'Nenhuma questão em branco.'}
-          </p>
-        ) : (
-          <ul className="glass mt-4 divide-y divide-slate-900/[0.06] rounded-2xl p-1 dark:divide-white/[0.06]">
-            {rows.map((r) => (
-              <ResultRow key={r.n} r={r} versionId={version.id} />
-            ))}
-          </ul>
-        )}
+        <div className="mt-5">
+          {onlyMistakes && mistakes.size === 0 ? (
+            <p className="sheet rounded-md p-8 text-center font-hand text-3xl text-greenpen">Nenhum erro. Gabaritou!</p>
+          ) : (
+            <AnswerSheet
+              questions={version.questions}
+              answers={attempt.answers}
+              currentIndex={-1}
+              onGo={(i) => navigate(`/prova/${version.id}?q=${version.questions[i].n}`)}
+              corrected={corrected}
+              only={onlyMistakes ? mistakes : undefined}
+              caption={`ENADE ${version.year}`}
+              columns="gap-8 sm:columns-2 lg:columns-3"
+            />
+          )}
+        </div>
       </section>
 
       <ConfirmDialog
         open={confirming}
-        title="Refazer prova?"
+        title="Refazer a prova?"
         confirmLabel="Refazer"
         cancelLabel="Cancelar"
         onCancel={() => setConfirming(false)}
@@ -281,7 +192,7 @@ function ResultView({ version }: { version: ExamVersion }) {
           navigate(`/prova/${version.id}`)
         }}
       >
-        <p>Suas respostas desta prova serão apagadas.</p>
+        <p>Suas marcações deste caderno serão apagadas e você começa do zero.</p>
       </ConfirmDialog>
     </div>
   )

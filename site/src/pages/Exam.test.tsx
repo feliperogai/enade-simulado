@@ -32,6 +32,7 @@ describe('teclado na tela da prova', () => {
   beforeEach(() => {
     localStorage.clear()
     window.scrollTo = () => {}
+    Element.prototype.scrollIntoView = () => {}
     render(
       <MemoryRouter initialEntries={['/prova/v?q=1']}>
         <Routes>
