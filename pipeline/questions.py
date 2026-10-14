@@ -36,6 +36,8 @@ _SHARED = re.compile(
     re.IGNORECASE,
 )
 # Aplicado ao texto sem espaços (em 2005 o rótulo vem como "RASCUNH O").
+# Aviso de "vire a página" (em 2008 vem escrito em curva, junto de uma seta).
+_PAGE_TURN = re.compile(r"^(CONTINUA|VIREAP[ÁA]GINA)\W*$", re.IGNORECASE)
 _CUT = re.compile(r"^(RASCUNHO|.?REALIVRE)", re.IGNORECASE)
 # Título de bloco por ênfase nos cadernos de Engenharia Grupo II (linha inteira).
 _SECTION = re.compile(r"^(CONTROLE E AUTOMAÇÃO|ELETRÔNICA|ELETROTÉCNICA|TELECOMUNICAÇÕES)$")
@@ -46,6 +48,7 @@ _FURNITURE_BAND = 0.13  # fração da altura no topo e na base
 _FURNITURE_MIN_PAGES = 3
 _FURNITURE_MIN_SHARE = 0.2  # fração das páginas
 _FURNITURE_Y_TOLERANCE = 3.0
+_FURNITURE_X_TOLERANCE = 20.0
 _FOOTER_LABEL_MIN_PAGES = 2
 _NUMBER_HEADING_MAX_INDENT = 15.0
 _NUMBER_HEADING_MIN_SIZE = 10.0
@@ -57,6 +60,7 @@ _BODY_MIN_CHARS = 20
 _GUTTER_SEARCH = 60
 _CUT_MAX_INDENT = 40.0
 _CONTENT_PAD = 3.0
+_ROTATED_GAP = 6.0  # pt entre letras de uma mesma palavra girada
 _ATTACH_GAP = 4.0
 _THIN_LINE = 1.5  # pt
 _COLUMN_OVERFLOW = 6.0  # quanto texto da coluna pode passar da divisória
@@ -114,6 +118,7 @@ class _PageLayout:
     columns: list[tuple[float, float]]  # faixas x de cada coluna
     margins: list[float] = field(default_factory=list)  # menor x0 do texto em cada coluna
     spanning: list[Rect] = field(default_factory=list)  # linhas que cruzam a divisória
+    rotated_content: list[Rect] = field(default_factory=list)  # texto girado que faz parte da questão
     spanning_body: list[Rect] = field(default_factory=list)  # idem, só linhas de corpo
     right_body: list[Rect] = field(default_factory=list)  # linhas de corpo só da coluna direita
 
@@ -170,9 +175,18 @@ def _decode_line(bbox: Rect, page_traces: list[dict], glyphs: dict[str, dict[int
     return "".join(c for _x, c in sorted(chars))
 
 
-def _extract(doc: pymupdf.Document) -> tuple[list[_Line], list[_PageLayout], dict[int, list[Rect]]]:
+@dataclass(frozen=True)
+class _Rotated:
+    page: int
+    bbox: Rect
+    text: str
+
+
+def _extract(doc: pymupdf.Document
+             ) -> tuple[list[_Line], list[_PageLayout], dict[int, list[Rect]], list[_Rotated]]:
     lines: list[_Line] = []
     masks: dict[int, list[Rect]] = defaultdict(list)
+    rotated: list[_Rotated] = []
     sizes = [(p.rect.width, p.rect.height) for p in doc]
     traces: list[list[dict]] | None = None
     glyphs: dict[str, dict[int, str]] = {}
@@ -186,7 +200,7 @@ def _extract(doc: pymupdf.Document) -> tuple[list[_Line], list[_PageLayout], dic
                 bbox = tuple(line["bbox"])
                 dx, dy = line["dir"]
                 if abs(dy) > 0.01 or dx < 0:
-                    masks[pno].append(bbox)
+                    rotated.append(_Rotated(pno, bbox, "".join(s["text"] for s in spans).strip()))
                     continue
                 text = "".join(s["text"] for s in spans)
                 if not text.strip():
@@ -208,7 +222,54 @@ def _extract(doc: pymupdf.Document) -> tuple[list[_Line], list[_PageLayout], dic
 
     layouts = [_layout(w, h, [ln for ln in lines if ln.page == pno])
                for pno, (w, h) in enumerate(sizes)]
-    return lines, layouts, masks
+    return lines, layouts, masks, rotated
+
+
+def _rotated_words(rotated: list[_Rotated]) -> dict[int, str]:
+    """Junta fragmentos girados vizinhos (texto em curva vem letra a letra) e
+    devolve, para cada fragmento, a palavra a que ele pertence."""
+    word: dict[int, str] = {}
+    by_page: dict[int, list[int]] = defaultdict(list)
+    for i, r in enumerate(rotated):
+        by_page[r.page].append(i)
+    for idxs in by_page.values():
+        idxs.sort(key=lambda i: rotated[i].bbox[0])
+        groups: list[list[int]] = []
+        for i in idxs:
+            b = rotated[i].bbox
+            last = groups[-1][-1] if groups else None
+            if last is not None:
+                lb = rotated[last].bbox
+                if b[0] - lb[2] <= _ROTATED_GAP and abs((b[1] + b[3]) / 2 - (lb[1] + lb[3]) / 2) <= _ROTATED_GAP * 2:
+                    groups[-1].append(i)
+                    continue
+            groups.append([i])
+        for g in groups:
+            text = "".join(rotated[i].text for i in g)
+            for i in g:
+                word[i] = text
+    return word
+
+
+def _split_rotated(rotated: list[_Rotated], page_count: int) -> tuple[list[_Rotated], list[_Rotated]]:
+    """(marcas, conteúdo). Texto girado é conteúdo (rótulo de eixo, poema concreto)
+    a menos que seja marca d'água de rascunho ou se repita na mesma posição em boa
+    parte das páginas, como o ano impresso na vertical em todas as folhas."""
+    min_pages = max(_FURNITURE_MIN_PAGES, round(_FURNITURE_MIN_SHARE * page_count))
+    words = _rotated_words(rotated)
+    marks, content = [], []
+    for i, r in enumerate(rotated):
+        cx, cy = (r.bbox[0] + r.bbox[2]) / 2, (r.bbox[1] + r.bbox[3]) / 2
+        same = {o.page for o in rotated
+                if _normalize(o.text) == _normalize(r.text)
+                and abs((o.bbox[0] + o.bbox[2]) / 2 - cx) <= _FURNITURE_Y_TOLERANCE * 3
+                and abs((o.bbox[1] + o.bbox[3]) / 2 - cy) <= _FURNITURE_Y_TOLERANCE * 3}
+        word = _squeeze(words[i])
+        if _CUT.match(word) or _PAGE_TURN.match(word) or len(same) >= min_pages:
+            marks.append(r)
+        else:
+            content.append(r)
+    return marks, content
 
 
 # --------------------------------------------------------------------------
@@ -227,16 +288,21 @@ def _mark_furniture(lines: list[_Line], sizes: list[tuple[float, float]], number
         if (_in_band(ln, sizes) and not (number_headings and _is_number_heading(ln, sizes)) and not ln.option
                 and not _HEADING.match(_squeeze(ln.text)) and not _CUT.match(_squeeze(ln.text))):
             by_key[_normalize(ln.text)].append(ln)
-    # Cabeçalho/rodapé de verdade se repete na mesma altura em boa parte das
-    # páginas; alternativas iguais ("I, apenas.") só coincidem de vez em quando.
+    # Cabeçalho/rodapé de verdade se repete no mesmo lugar (altura e posição
+    # horizontal) em boa parte das páginas; alternativas iguais ("I, apenas.") ou
+    # números de questão no pé da página só coincidem de vez em quando.
     min_pages = max(_FURNITURE_MIN_PAGES, round(_FURNITURE_MIN_SHARE * len(sizes)))
     for group in by_key.values():
         for ln in group:
-            pages = {o.page for o in group if abs(o.y0 - ln.y0) <= _FURNITURE_Y_TOLERANCE}
+            cx = (ln.x0 + ln.bbox[2]) / 2
+            pages = {o.page for o in group
+                     if abs(o.y0 - ln.y0) <= _FURNITURE_Y_TOLERANCE
+                     and abs((o.x0 + o.bbox[2]) / 2 - cx) <= _FURNITURE_X_TOLERANCE}
             w, h = sizes[ln.page]
             # Rodapé de ênfase ("LICENCIATURA", "SISTEMAS DE INFORMAÇÃO"): rótulo em
             # maiúsculas, centralizado, que só aparece nas poucas páginas do bloco.
-            footer_label = (not any(c.islower() for c in ln.text) and ln.y0 >= h * (1 - _FURNITURE_BAND)
+            footer_label = (sum(c.isalpha() for c in ln.text) >= 4 and not any(c.islower() for c in ln.text)
+                            and ln.y0 >= h * (1 - _FURNITURE_BAND)
                             and abs((ln.x0 + ln.bbox[2]) / 2 - w / 2) <= 0.15 * w)
             if len(pages) >= (_FOOTER_LABEL_MIN_PAGES if footer_label else min_pages):
                 ln.furniture = True
@@ -248,7 +314,7 @@ def _mark_furniture(lines: list[_Line], sizes: list[tuple[float, float]], number
     for ln in short:
         cx = (ln.x0 + ln.bbox[2]) / 2
         pages = {o.page for o in short
-                 if abs(o.y0 - ln.y0) <= _FURNITURE_Y_TOLERANCE and abs((o.x0 + o.bbox[2]) / 2 - cx) <= 20}
+                 if abs(o.y0 - ln.y0) <= _FURNITURE_Y_TOLERANCE and abs((o.x0 + o.bbox[2]) / 2 - cx) <= _FURNITURE_X_TOLERANCE}
         if len(pages) >= min_pages:
             ln.furniture = True
 
@@ -470,7 +536,12 @@ def _compute_spanning(lines: list[_Line], layouts: list[_PageLayout]) -> None:
 
 def _prepare(doc: pymupdf.Document, heading_mode: HeadingMode = "questao"
              ) -> tuple[list[_Line], list[_PageLayout], dict[int, list[Rect]]]:
-    lines, layouts, masks = _extract(doc)
+    lines, layouts, masks, rotated = _extract(doc)
+    rotated_marks, rotated_content = _split_rotated(rotated, len(layouts))
+    for r in rotated_marks:
+        masks[r.page].append(r.bbox)
+    for r in rotated_content:
+        layouts[r.page].rotated_content.append(r.bbox)
     _mark_furniture(lines, [(lay.width, lay.height) for lay in layouts], heading_mode == "number")
     for ln in lines:
         ln.column = _column_of(ln.x0, layouts[ln.page])
@@ -497,6 +568,8 @@ def _content_boxes(doc: pymupdf.Document, lines: list[_Line],
     for ln in lines:
         if not ln.furniture:
             boxes[ln.page].append((ln.bbox, True))
+    for pno, layout in enumerate(layouts):
+        boxes[pno].extend((r, True) for r in layout.rotated_content)
     for pno, page in enumerate(doc):
         h = layouts[pno].height
         top, bottom = h * _FURNITURE_BAND, h * (1 - _FURNITURE_BAND)

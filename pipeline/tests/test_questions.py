@@ -254,3 +254,69 @@ def test_codigo_de_barras_com_menos_digitos_e_mobilia(located):
     # a Q1 termina na p4 e não pode levar o código do topo da p5.
     _doc, loc = located("2021-b")
     assert {s.page for s in loc.segments[1]} == {4}
+
+
+def _rotated_lines(doc, page):
+    out = []
+    for block in doc[page].get_text("dict")["blocks"]:
+        for line in block.get("lines", []):
+            dx, dy = line["dir"]
+            if abs(dy) > 0.01 or dx < 0:
+                out.append((line["bbox"], "".join(s["text"] for s in line["spans"]).strip()))
+    return out
+
+
+def _masked(loc, page, bbox):
+    cx, cy = (bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2
+    return any(m[0] <= cx <= m[2] and m[1] <= cy <= m[3] for m in loc.masks.get(page, []))
+
+
+@pytest.mark.parametrize(
+    "booklet_id,n",
+    # poema concreto com letras giradas (2019) e rótulos girados de gráficos (2017, 2014, 2005)
+    [("2019-e", 2), ("2017-b", 1), ("2014-b", 3), ("2005-engenharia", 13)],
+)
+def test_texto_girado_da_questao_aparece(located, booklet_id, n):
+    doc, loc = located(booklet_id)
+    for s in loc.segments[n]:
+        inside = [(b, t) for b, t in _rotated_lines(doc, s.page)
+                  if s.x0 <= (b[0] + b[2]) / 2 <= s.x1 and s.y0 <= (b[1] + b[3]) / 2 <= s.y1]
+        apagados = [t for b, t in inside if _masked(loc, s.page, b)]
+        assert not apagados, f"questão {n}: texto girado apagado {apagados[:5]}"
+
+
+def test_marcas_giradas_de_pagina_continuam_mascaradas(located):
+    # 2008/e1: "RASCUNHO" na diagonal e o "2008" vertical repetido nas folhas são
+    # marcas da página, não conteúdo (a capa, sem questões, fica de fora).
+    doc, loc = located("2008-engenharia")
+    pages = {s.page for segs in loc.segments.values() for s in segs}
+    checked = 0
+    for page in sorted(pages):
+        for b, t in _rotated_lines(doc, page):
+            if t in ("RASCUNHO", "2008"):
+                checked += 1
+                assert _masked(loc, page, b), f"p{page}: {t!r} não mascarado"
+    assert checked > 10
+
+
+@pytest.mark.parametrize(
+    "booklet_id,n,words",
+    # números no pé da página que são alternativas/dados, não número de página
+    [("2008-computacao", 43, ["0111", "1011"]), ("2008-computacao", 18, ["24", "25"])],
+)
+def test_numeros_da_questao_no_rodape_aparecem(located, booklet_id, n, words):
+    doc, loc = located(booklet_id)
+    visible = " ".join(_visible_text(doc, loc, s) for s in loc.segments[n]).split()
+    for w in words:
+        assert w in visible, f"questão {n}: {w!r} apagado"
+
+
+def test_seta_continua_em_curva_fica_fora(located):
+    # 2008/e1 p24: "Continua" escrito letra a letra numa curva, junto de uma seta,
+    # no pé da página. É aviso de "vire a página", não parte da Q40.
+    doc, loc = located("2008-engenharia")
+    letras = [(b, t) for b, t in _rotated_lines(doc, 24) if b[1] > 740]
+    assert "".join(t for _b, t in sorted(letras, key=lambda x: x[0][0])) == "Continua"
+    for b, t in letras:
+        assert _masked(loc, 24, b), f"{t!r} não mascarado"
+    assert max(s.y1 for s in loc.segments[40]) < 745
