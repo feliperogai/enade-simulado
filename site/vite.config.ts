@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Caminhos relativos: o site funciona em qualquer subcaminho (GitHub Pages).
+  // Caminhos relativos: o site funciona em qualquer domínio ou subcaminho.
   base: './',
   plugins: [react(), tailwindcss()],
   test: {

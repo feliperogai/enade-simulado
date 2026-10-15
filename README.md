@@ -6,7 +6,7 @@ ano e a versão da prova, responde uma questão por vez e, ao finalizar, vê
 quantas acertou pelo gabarito oficial, com o desempenho em Formação Geral e
 Componente Específico e a revisão questão a questão.
 
-Endereço esperado depois de publicado: <https://feliperogai.github.io/enade-simulado/>
+No ar em: <https://enade-simulado.vercel.app>
 
 - 23 versões de prova, 804 questões objetivas (as discursivas ficam de fora).
 - Questões recortadas dos PDFs originais, com figuras, fórmulas e código intactos.
@@ -53,11 +53,11 @@ recortes. Se algum sair errado, corrija com uma entrada em
 rode `python -m pipeline.build --only <caderno>` para refazer só aquele caderno.
 Os testes do pipeline rodam com `python -m pytest pipeline/tests`.
 
-## Publicar no GitHub Pages
+## Publicação
 
-O workflow `.github/workflows/deploy.yml` testa, compila e publica o site a cada
-push na branch `main`. Para ativar, no GitHub: **Settings → Pages → Source:
-GitHub Actions**.
+O site é publicado na Vercel a cada push na branch `main`. No projeto da Vercel,
+a pasta `site` é o **Root Directory** e o preset é Vite (build `npm run build`,
+saída `dist`).
 
 ## Para saber mais
 
